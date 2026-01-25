@@ -1,0 +1,582 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,300italic&subset=latin,vietnamese);
+@media screen and (max-width: 650px){/*#mobile*/
+.entry-wrap {
+    padding: 7%;
+}
+.cclear2 {
+    width: 100%!important;
+}
+.o-price img {
+    height: 130px!important;
+} 
+p.keugoi {
+    background: #010031;
+    font-weight: 100;
+    width: 100%;
+    position: relative;
+    letter-spacing: 2px;
+    font-family: TuPro Display;
+    padding: 4% 2%;
+    line-height: 40px !important;
+    color: #fff !important;
+    text-shadow: 1px 1px 2px #75453f,0 0 25px #2d7198,0 0 5px #71261c !important;
+    font-size: 27px !important;
+    clear: both;
+    margin: 2% auto 17%;
+    text-align: center;
+}
+}
+.Detail iframe {
+    width: 100%!important;
+    height: 257px!important;
+}
+
+@media screen and (max-width: 480px){
+td.td4, td.td44{
+    display: none;
+}
+
+p.clicked a {
+    padding: 5px 18px!important;
+    line-height: 19px!important;
+    bottom: -12px!important;
+    position: absolute!important;
+    font-size: 12px!important;
+}
+
+.box-uudiem .cclear {
+    padding: 10px 5%!important;
+    width: 100%!important;
+    background: #267982 url("https://tintam.vn/bg-dot.png")!important;
+}
+.price-video .sp-khac-l span p,.price-video .sp-khac-r span p {
+    font-size: 16px;
+}
+.bang-gia-main .col-hinhanh img {
+    width: 70px!important;
+    height: inherit!important;
+}
+
+.sp-khac-l, .sp-khac-r {
+    width: 100%!important;
+    clear: both!important;
+}	
+.sp-khac-r a, .sp-khac-l a {
+    width: 100%!important;
+}
+.sp-khac-r {
+    margin-top: 35px;
+}
+p.price-number {
+    font: 16px/12px arial,sans-serif!important;
+}
+.p-right a {
+    top: -38px;
+    right: 5px!important;
+    font-size: 12px!important; 
+    bottom: inherit!important;
+    color: #fff!important;
+    background: #ff9601!important;
+    border: 1px solid #e48e14!important;	
+}
+.text-price p {
+    font-size: 16px!important; 
+}
+.o-price img {
+    width: 100%!important;
+}
+td.td11, td.td1 {
+    display: none;
+}
+.nhandangky, .nhankhuyenmai {
+    font-size: 23px;
+}
+}
+
+@media screen and (max-width: 995px){
+.bang-gia-main img.mobile, .bang-gia-main img.icon-mobile {
+    width: inherit !important;
+    height: auto;
+}
+
+p.textprice-name {
+    height: 42px;
+}
+
+img.imgv-video {
+    width: 100% !important;
+    height: auto!important;
+}
+.chinhanh-main {
+    width: 93%!important;
+}
+	
+img.imgs-video {
+    width: 100%;
+}
+.sp-khac-l span, .sp-khac-r span {
+    width: 100%!important;
+}
+img.pics.hottel {
+    width: 86%!important;
+}
+.bang-gia-main {
+    width: 100%!important;
+}
+.col-hinhanh img {
+    width: 100%;
+	height:auto;
+}
+p.clicked i {
+    display: none;
+}
+p.clicked a {
+    font-size: 12px!important;
+}
+.pics img {
+    width: 100%!important;
+}
+img.mobile {
+    width:inherit !important;
+}
+
+.price-box {
+    width: 49%!important;
+}
+.p-right a {
+    padding: 0px 5px!important;
+}
+img.pics {
+    width: 100%!important;
+    height: inherit!important;
+}
+}
+/* Mobile */
+.p-right {
+    position: absolute;
+    right: 17px;
+}
+p.textprice-name {
+    font-weight: 600;
+}
+p.maproom.clred {
+    color: #f00;
+}
+.bang-gia-main a{
+    text-decoration: none!important;
+}
+.box-clear {
+    padding: 50px 0;
+}
+.nhandangky{
+	 background-color:#1198b6;
+    padding: 10px;
+    line-height: 57px;
+}
+
+.nhankhuyenmai{ 
+	background-color:#ff6c00;
+    padding: 10px;
+    line-height: 57px;
+}
+.op11 {
+    background: #f00!important;
+}
+a:-webkit-any-link { 
+    text-decoration: none;
+}
+.bang-gia-main i.icons.fa {
+    margin: 17px 0 -16px 0;
+}
+.sp-khac-l:hover .fa, .sp-khac-r:hover .fa{
+    color: #fbff02;
+}
+.sp-khac-l a {
+    width: 90%;
+    float: left;
+    text-align: center;
+    color: #fff;
+}
+.sp-khac-r a {
+    width: 90%;
+    float: right;
+    text-align: center; 
+    color: #fff;
+}
+.sp-khac-l {
+    width: 50%;
+    float: left;
+	position:relative;
+}
+.sp-khac-r {
+    width: 50%;
+    float: left;
+	position:relative;
+}
+.sp-khac-l a {
+    width: 90%;
+    float: left;
+	background: #F39315 url("http://tintam.vn/bg-dot.png");
+    text-align: center;
+    color: #fff;
+}
+.sp-khac-r a {
+    width: 90%;
+    float: right;
+    background: #39b54a url("http://tintam.vn/bg-dot.png");
+    text-align: center; 
+    color: #fff;
+}
+
+.price-video .sp-khac-l span{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 400px;
+}
+.price-video .sp-khac-r span{
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 400px;
+}
+.label-videoprice {
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    left: 0;
+	 height: 230px;
+    width: 400px;
+    background: rgba(0,0,0,0.15) url("http://tintam.vn/bg-dot.png");
+}
+.sp-khac-l:hover .button-xem, .sp-khac-r:hover .button-xem{
+    box-shadow: 1px 2px 2px 1px rgba(27, 27, 27, 0.22);
+}
+.icons.fa.fa-3x {
+    margin: 0 auto;
+}
+.icons.fa.fa-3x:before {
+    font-size: 50px;
+    line-height: 94px;
+}
+.button-xem a{
+    background: #fff!important;
+    margin: 20px auto 0;
+    margin-bottom: 20px;
+    color: #088dab;
+    width: 92px;
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 0 4px 4px 0;
+    text-align: center;
+    position: relative;
+    left: -1px;
+}
+.vd1z a{
+	background: url("https://img.youtube.com/vi/cFXn1qrXu6U/mqdefault.jpg")!important;
+}
+
+.bang-gia-main{
+    width: 99%;
+    float: right; 
+    margin: 0 auto; 
+}
+
+.price-main{
+    background: #FFF;
+	border-top: 1px solid #cdcdcd;
+    border-left: 1px solid #cdcdcd;
+}
+.price-main{
+    background: #FFF;
+	float:right;
+	border-top: 1px solid #cdcdcd;
+    border-left: 1px solid #cdcdcd;
+}
+.price-box{
+    float: left;
+    position: relative;
+    width: 49%;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+}
+.o-price {
+    background: #FFFFFF;
+    text-align: center;
+    padding: 30px 0px 27px 0;
+}
+.o-price img {
+    width: 85%;
+    margin: 0 auto;
+}
+.p-left {
+    width: 90%;
+    line-height: 21px;
+    float: left;
+}
+
+.box-uudiem {
+    padding-bottom: 50px;
+}
+.box-dactinh {
+    margin-bottom: 50px;
+}
+.text-price{
+    background: #ded;
+    height: 84px;
+    position: relative;
+    box-shadow: 0px 1px 0px 2px #cdcdcd;;
+}
+.price-video .sp-khac-l a, .price-video .sp-khac-r a{
+    background: none;
+}
+.text-price:before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0px 13px 13px 13px;
+    border-color: transparent transparent #ded transparent;
+    content: "";
+    position: absolute;
+    top: -13px;
+    right: initial;
+    left: 48%;
+}
+
+.text-price p{
+    text-align: initial;
+    margin: 10px 13px;
+    font-size: 16px;
+}
+.price-box:hover .p-right a{ 
+    color: #fff;
+    background: #288ad6;
+}
+.p-right a {
+    margin: 0 auto;
+    position: relative;
+    bottom: 22px;
+    z-index: 10;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #288ad6;
+    padding: 3px 6px;
+    font-size: 14px;
+}
+.bang-gia-main{
+	font-family: Tahoma,Open Sans, Roboto, Roboto Condensed, Arial, sans-serif;
+    font-size: 20px;
+	color:#565656;
+}
+p.textprice-name, .p-right a, .bang-gia-main p{
+    font-family: Roboto, Roboto Condensed, Arial, sans-serif;
+	text-decoration:none!important;
+}
+p.price-number {
+    color: #f00;
+    font: 18px/12px arial,sans-serif;
+}
+
+.cclear{
+    width: 96%;
+    color: #fff;
+    font: 20px Roboto;
+    font-weight: 300;
+    line-height: 27px;
+    border-width: 0px;
+    border-color: #FFA21F;
+    background:#39B54A url("http://tintam.vn/bg-dot.png");
+    padding: 1px 2%;
+}
+.p-blue{
+	color:#0000cd;
+}
+.cclear2{
+    line-height: 22px;
+    color: #5F5F5F!important;
+    font-weight: 400;
+    border: 2px dashed #e38f00;
+    background-color: #fffdef!important;
+	width: 95%;
+}
+p.maproom span {
+    color: #f5680e;
+}
+p.maproom {
+    text-align: left;
+    margin: 0px auto 0px; 
+    color: #0071af;
+}
+.chinhanh-main{ 
+    width: 700px;
+    margin: -10px auto 35px;
+    background: #f2f2f2;
+    border-left: 5px solid #f47321;
+    padding: 0 0 15px 16px;
+}
+
+.cclear2 .clear-h2{
+    color: #ff6c00!important;
+    font-weight: 600;
+    font-size: 27px;
+}
+.check-price{
+border: 0px none; vertical-align: sub; width: 20px; height: 19px; margin-right: 4px;
+}
+.p-note{
+    text-align: center;
+	color:#f00; 
+	font-weight:400;
+	line-height: 34px;
+	font-family: Open Sans, Arial, sans-serif!important;
+	font-size: 21px;
+}
+.clear-h2{
+	line-height: 35px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: underline !important;
+    font-family: Roboto Condensed!important;
+    font-size: 26px;
+    margin: 3% 0 0 1%;
+    text-align: left;
+}
+.text-bgia{
+    font-size: 34px;
+    margin: 26px auto 9px;
+    color: #f00;
+}
+.gdthp{
+	color:414141;
+}
+hr {
+    border-top: 2px dashed #ff6c00;
+}
+/*----------------------------------------------------------------*/
+p.text-bgia.phukien {
+    border: 2px solid #ff9601;
+    padding: 9px 0;
+    width: 80%;
+    color: #f00;
+}
+
+.bang-gia-main table.bang-gia-rem {
+    width: 100%;
+	border:1px solid #e1e1e1;
+	border-spacing: 0;
+}
+.bang-gia-main table .col {
+    background: #6CBC63;
+    height: 50px;
+    font-weight: 500;
+    color: fff;
+    font-size: 19px;
+    text-align: center;
+    font-family: Open Sans, Roboto, Arial, sans-serif;
+    text-transform: uppercase;
+}
+.bang-gia-main tr.col td {
+    padding: 11px 7px;
+    line-height: 23px;
+    font-size: 20px;
+    font-family: Roboto!important;
+    color: #fff;
+}
+
+.bang-gia-main .col-hinhanh img{
+	text-align:center;
+	width:200px;
+	height:180px;
+}
+.bang-gia-main .col td, .bang-gia-main .col1 td,.bang-gia-main .col2 td{
+	text-align:center;
+}
+.bang-gia-main .td3{
+	text-align: left!important;
+    vertical-align: top;
+}
+.bang-gia-main tr.col0 td {
+    padding: 15px;
+    color: #565656;
+    line-height: 28px;
+    font-size: 18px;
+}
+.bang-gia-main tr.col-private .td5,.bang-gia-main tr.col .td5 {
+    border-right: 0px!important;
+}
+.bang-gia-main tr.col td {
+    border-right: 2px solid #fff;
+}
+.bang-gia-main tr.col-private td {
+    padding: 18px 10px;
+    font-size: 16px;
+    border-right: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+}
+.bang-gia-main td.td3 {
+    line-height: 35px;
+}
+.bang-gia-main .col1 .td5,.bang-gia-main .col2 .td5  {
+    color: #f00;
+}
+.pic-khuyen-mai{
+	width:124px!important;
+	height:44px!important;
+}
+.bang-gia-main tr.col2 {
+    background: #f1f1f1;
+}
+.bang-gia-main p.clicked {
+}
+.bang-gia-main p.clicked a{
+    white-space: nowrap!important;
+    margin: 20px auto; 
+    text-align: center;
+    z-index: 10;
+    cursor: pointer;
+    border: 1px solid #ef8c00;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    background: #ff9601;
+}
+.bang-gia-main .td3{
+	position:relative;
+}
+p.kmd1 {
+    margin-top: -8px;
+    font-size: 15px;
+    font-family: Roboto;
+    color: #f00;
+    font-weight: 600;
+}
+.xx {
+    margin: -10px 0 -18px;
+    color: #f00;
+    font-weight: 600;
+}
+.value {
+    color: #f00;
+    font-size: 17px;
+    font-weight: 400;
+}
+.bang-gia-main .td5 {
+    line-height: 40px;
+}
+.p-loairem{
+	background: #FFA800;
+    color: #fff;
+    padding: 6px 15px;
+}
+.pclear{
+	height:50px;
+}
+

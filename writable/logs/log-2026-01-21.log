@@ -1,0 +1,16 @@
+CRITICAL - 2026-01-21 00:21:07 --> Unparenthesized `a ? b : c ? d : e` is deprecated. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)`
+#0 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\View\View.php(246): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Unparenthesized...', 'E:\\OpenServer\\h...', 302, Array)
+#1 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\View\View.php(246): include()
+#2 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('backend/product...', Array, true)
+#3 E:\OpenServer\home\tintam.local\app\Views\backend\product\catalogue\update.php(12): view('backend/product...', Array)
+#4 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\View\View.php(246): include('E:\\OpenServer\\h...')
+#5 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('backend/product...', Array, true)
+#6 E:\OpenServer\home\tintam.local\app\Views\backend\dashboard\layout\home.php(48): view('backend/product...')
+#7 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\View\View.php(246): include('E:\\OpenServer\\h...')
+#8 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('backend/dashboa...', Array, true)
+#9 E:\OpenServer\home\tintam.local\app\Controllers\Backend\Product\Catalogue.php(171): view('backend/dashboa...', Array)
+#10 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Backend\Product\Catalogue->update(53)
+#11 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Product\Catalogue))
+#12 E:\OpenServer\home\tintam.local\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 E:\OpenServer\home\tintam.local\index.php(47): CodeIgniter\CodeIgniter->run()
+#14 {main}
