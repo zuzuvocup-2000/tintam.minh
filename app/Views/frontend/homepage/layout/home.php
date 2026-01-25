@@ -51,7 +51,7 @@ helper('mydatafrontend');
 	</style>
 </head>
 
-<body data-rsssl="1" class="home page wp-schema-pro-2.7.16 home-style1 wpb-js-composer js-comp-ver-5.0.1 vc_responsive">
+<body data-rsssl="1" class="home page wp-schema-pro-2.7.16 <?php echo (isset($ishome) && $ishome == 'home') ? 'home-style1' : ''; ?> wpb-js-composer js-comp-ver-5.0.1 vc_responsive">
 	<div class="body-wrapper theme-clearfix">
 		<div class="body-wrapper-inner">
 			<?php echo view('frontend/homepage/common/schema') ?>

@@ -890,3 +890,49 @@ swiper {
     height: 100%;
     object-fit: cover;
   }
+
+.product-quantity .uk-flex {
+    display: flex;
+    align-item: center;
+    gap: 10px;
+}
+.product-quantity {
+    margin: 0 10px !important;
+    display: block;
+    color: #222222;                                                         
+    text-align: center;
+    box-shadow: none;
+    font-size: 18px;
+    background: #fff;
+    border-radius: 5px;
+}
+.product-quantity #qtym{
+    width: 50px;
+    margin-bottom: 0 !important;
+    height: 40px !important;
+}
+.product-quantity button {
+    background: #009d3b !important;
+    color: white !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-bottom: 0;            
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;                                                
+}
+.btn-addcart {
+    display: block;
+    font-size: 20px;
+    line-height: 25px;
+    color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    padding: 18px 0;
+    background: #009d3b;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.prd_quantity {
+    width: 50px !important;
+}

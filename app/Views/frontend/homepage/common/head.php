@@ -1,5 +1,6 @@
 <?php
 $css = [
+    ASSET_FRONTEND . 'minh.css',
     ASSET_FRONTEND . 'style.css',
     ASSET_FRONTEND . 'plugins/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css',
     ASSET_FRONTEND . 'plugins/toastr/toastr.css',

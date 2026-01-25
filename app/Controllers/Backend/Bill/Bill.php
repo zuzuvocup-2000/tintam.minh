@@ -29,14 +29,8 @@ class Bill extends BaseController{
 		$config['total_rows'] = $this->AutoloadModel->_get_where([
 			'select' => 'tb1.id',
 			'table' => $this->data['module'].' as tb1',
-			'join' => [
-				[
-					'bill_detail as tb2','tb1.id = tb2.bill_id','inner'
-				]
-			],
 			'keyword' => $keyword,
 			'where' => $where,
-			'group_by' => 'tb1.id',
 			'order_by' => 'tb1.id desc',
 			'count' => TRUE,
 		]);
@@ -53,15 +47,11 @@ class Bill extends BaseController{
 				'table' => $this->data['module'].' as tb1',
 				'join' => [
 					[
-						'bill_detail as tb2','tb1.id = tb2.bill_id','inner'
-					],
-					[
-						'vn_province as tb3','tb1.cityid = tb3.provinceid','inner'
+						'vn_province as tb3','tb1.cityid = tb3.provinceid','left'
 					],
 				],
 				'where' => $where,
 				'keyword' => $keyword,
-				'group_by' => 'tb1.id',
 				'limit' => $config['per_page'],
 				'start' => $page * $config['per_page'],
 				'order_by' => 'tb1.id desc'
