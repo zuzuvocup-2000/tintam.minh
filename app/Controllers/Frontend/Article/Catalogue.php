@@ -299,43 +299,46 @@ class Catalogue extends FrontendController{
         ], TRUE);
         $html = '';
         if(isset($listObject) && is_array($listObject) && count($listObject)){
-            $html = $html .'<div class="posts grid post-grid row" data-grid-options="{
-                \'layoutMode\': \'fitRows\'}">';
             foreach ($listObject as $key => $value) {
                 if(count($listObject) == 13 && count($listObject) - 1 == $key) {break;}
-                $html = $html.'<div class="grid-item col-sm-6 col-lg-4 lifestyle shopping winter-sale">';
-                    $html = $html.'<article class="post">';
-                        $html = $html.'<figure class="post-media designs-media">';
-                            $html = $html.'<a href="'.$value['canonical'].HTSUFFIX.'">';
-                                $html = $html.'<img src="'.$value['image'].'" width="380" height="280" alt="'.$value['title'].'">';
-                            $html = $html.'</a>';
-                        $html = $html.'</figure>';
-                        $html = $html.'<div class="post-details">';
-                            $html = $html.'<div class="post-meta">';
-                                $html = $html.'đăng ngày';
-                                $html = $html.'<a class="post-date">';
-                                    $html = $html.date('d', strtotime($value['created_at']));
-                                    $html = $html.'tháng';
-                                    $html = $html.date('m', strtotime($value['created_at']));
-                                    $html = $html.'năm';
-                                    $html = $html.date('Y', strtotime($value['created_at']));
-                                $html = $html.'</a>';
-                            $html = $html.'</div>';
-                            $html = $html.'<h4 class="post-title designs-title">';
-                            $html = $html.'<a href="'.$value['canonical'].HTSUFFIX.'">'.$value['title'].'</a>';
-                            $html = $html.'</h4>';
-                            $html = $html.'<p class="post-content">';
-                                $html = $html.strip_tags(base64_decode($value['description']));
-                            $html = $html.'</p>';
-                            $html = $html.'<a href="'.$value['canonical'].HTSUFFIX.'" class="btn btn-link btn-underline btn-primary">';
-                                $html = $html.'Đọc thêm';
-                                $html = $html.'<i class="d-icon-arrow-right"></i>';
-                            $html = $html.'</a>';
-                        $html = $html.'</div>';
-                    $html = $html.'</article>';
-                $html = $html.'</div>';
+                
+                // Tạo category slug
+                $catSlug = '';
+                if(isset($value['cat_canonical']) && !empty($value['cat_canonical'])) {
+                    $catSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $value['cat_canonical'])));
+                } elseif(isset($value['cat_title']) && !empty($value['cat_title'])) {
+                    $catSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $value['cat_title'])));
+                }
+                
+                // Tạo URLs
+                $articleUrl = base_url($value['canonical'] . HTSUFFIX);
+                $articleImage = base_url($value['image']);
+                $externalLink = 'http://congtrinh.tintam.vn/' . $value['canonical'] . '.html';
+                
+                // Lấy popup image
+                $popupImage = $articleImage;
+                if(isset($value['album']) && !empty($value['album'])) {
+                    $album = json_decode($value['album'], true);
+                    if(is_array($album) && count($album) > 0) {
+                        $popupImage = base_url($album[0]);
+                    }
+                }
+                
+                $html .= '<li class="grid-item grid-item p-lg-4 p-md-3 p-sm-2 p-xs-1 ' . $catSlug . '">';
+                $html .= '<div class="portfolio-item-inner">';
+                $html .= '<div class="portfolio-in">';
+                $html .= '<a class="portfolio-img" href="' . $articleUrl . '" title="' . htmlspecialchars($value['title']) . '">';
+                $html .= '<img src="' . $articleImage . '" class="attachment-large size-large wp-post-image" alt="' . htmlspecialchars($value['title']) . '" />';
+                $html .= '</a>';
+                $html .= '<div class="p-item-content">';
+                $html .= '<a rel="nofollow" target="_blank" class="p-item-title" href="' . $externalLink . '" title="' . htmlspecialchars($value['title']) . '">' . htmlspecialchars($value['title']) . '</a>';
+                $html .= '<a rel="nofollow" target="_blank" href="' . $externalLink . '" class="p-item item-more" title="' . htmlspecialchars($value['title']) . '"><span class="fa fa-link"></span></a>';
+                $html .= '<a href="' . $popupImage . '" class="p-item item-popup" title="' . htmlspecialchars($value['title']) . '"><span class="fa fa-search"></span></a>';
+                $html .= '</div>';
+                $html .= '</div>';
+                $html .= '</div>';
+                $html .= '</li>';
             }
-            $html = $html .'</div>';
         }
 
         $json = [
