@@ -228,7 +228,7 @@ $productHot = $model->_get_where(array(
                                             <div class="vc_btn3-container img--full vc_btn3-inline">
                                                 <a
                                                     class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-color-grey"
-                                                    href="<?php echo base_url('shop/' . $category['canonical'] . '.html'); ?>"
+                                                    href="<?php echo base_url($category['canonical']); ?>"
                                                     title=""
                                                     target="_blank"
                                                     rel="nofollow"
@@ -247,7 +247,7 @@ $productHot = $model->_get_where(array(
                                                     <?php if(!empty($products)): 
                                                         $productCount = count($products);
                                                         foreach($products as $pIndex => $product): 
-                                                            $productUrl = base_url('shop/' . $product['canonical'] . '.html');
+                                                            $productUrl = base_url($product['canonical']);
                                                             $productImage = !empty($product['avatar']) ? $product['avatar'] : (!empty($product['image']) ? $product['image'] : '');
                                                             $productImageUrl = $productImage ? ((strpos($productImage, 'http') === 0) ? $productImage : BASE_URL . ltrim($productImage, '/')) : '';
                                                             $hasSale = !empty($product['price_promotion']) && $product['price_promotion'] < $product['price'];
@@ -444,7 +444,7 @@ $productHot = $model->_get_where(array(
                                                                                         rel="nofollow"
                                                                                         target="_blank"
                                                                                         class="p-item-title"
-                                                                                        href="http://congtrinh.tintam.vn/man-sao-cuon-rem-sao-van-phong-toa-nha-bitexco-quan-1-tp-hcm.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-sao-cuon-rem-sao-van-phong-toa-nha-bitexco-quan-1-tp-hcm"
                                                                                         title="Màn Sáo Cuộn, Rèm Sáo Văn Phòng Tòa Nhà BITEXCO Quận 1 TP.HCM"
                                                                                         >Màn Sáo Cuộn, Rèm Sáo Văn Phòng
                                                                                         Tòa Nhà BITEXCO Quận 1 TP.HCM</a
@@ -452,7 +452,7 @@ $productHot = $model->_get_where(array(
                                                                                     <a
                                                                                         rel="nofollow"
                                                                                         target="_blank"
-                                                                                        href="http://congtrinh.tintam.vn/man-sao-cuon-rem-sao-van-phong-toa-nha-bitexco-quan-1-tp-hcm.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-sao-cuon-rem-sao-van-phong-toa-nha-bitexco-quan-1-tp-hcm"
                                                                                         class="p-item item-more"
                                                                                         title="Màn Sáo Cuộn, Rèm Sáo Văn Phòng Tòa Nhà BITEXCO Quận 1 TP.HCM"
                                                                                         ><span class="fa fa-link"></span
@@ -492,7 +492,7 @@ $productHot = $model->_get_where(array(
                                                                                         rel="nofollow"
                                                                                         target="_blank"
                                                                                         class="p-item-title"
-                                                                                        href="http://congtrinh.tintam.vn/man-cua-cao-cap-the-cliff-resort-residence-phan-thiet.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-cua-cao-cap-the-cliff-resort-residence-phan-thiet"
                                                                                         title="Màn Cửa Cao Cấp The Cliff Resort Residence Phan Thiết"
                                                                                         >Màn Cửa Cao Cấp The Cliff
                                                                                         Resort Residence Phan Thiết</a
@@ -500,7 +500,7 @@ $productHot = $model->_get_where(array(
                                                                                     <a
                                                                                         rel="nofollow"
                                                                                         target="_blank"
-                                                                                        href="http://congtrinh.tintam.vn/man-cua-cao-cap-the-cliff-resort-residence-phan-thiet.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-cua-cao-cap-the-cliff-resort-residence-phan-thiet"
                                                                                         class="p-item item-more"
                                                                                         title="Màn Cửa Cao Cấp The Cliff Resort Residence Phan Thiết"
                                                                                         ><span class="fa fa-link"></span
@@ -540,7 +540,7 @@ $productHot = $model->_get_where(array(
                                                                                         rel="nofollow"
                                                                                         target="_blank"
                                                                                         class="p-item-title"
-                                                                                        href="http://congtrinh.tintam.vn/man-sao-van-phong-rem-cua-ky-tuc-xa-posco-huyen-tan-thanh-tinh-ba-ria-vung-tau.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-sao-van-phong-rem-cua-ky-tuc-xa-posco-huyen-tan-thanh-tinh-ba-ria-vung-tau"
                                                                                         title="Màn Sáo Văn Phòng – Rèm Cửa Ký Túc Xá Posco Huyện Tân Thành, Tỉnh Bà Rịa Vũng Tàu"
                                                                                         >Màn Sáo Văn Phòng – Rèm Cửa Ký
                                                                                         Túc Xá Posco Huyện Tân Thành,
@@ -549,7 +549,7 @@ $productHot = $model->_get_where(array(
                                                                                     <a
                                                                                         rel="nofollow"
                                                                                         target="_blank"
-                                                                                        href="http://congtrinh.tintam.vn/man-sao-van-phong-rem-cua-ky-tuc-xa-posco-huyen-tan-thanh-tinh-ba-ria-vung-tau.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-sao-van-phong-rem-cua-ky-tuc-xa-posco-huyen-tan-thanh-tinh-ba-ria-vung-tau"
                                                                                         class="p-item item-more"
                                                                                         title="Màn Sáo Văn Phòng – Rèm Cửa Ký Túc Xá Posco Huyện Tân Thành, Tỉnh Bà Rịa Vũng Tàu"
                                                                                         ><span class="fa fa-link"></span
@@ -589,7 +589,7 @@ $productHot = $model->_get_where(array(
                                                                                         rel="nofollow"
                                                                                         target="_blank"
                                                                                         class="p-item-title"
-                                                                                        href="http://congtrinh.tintam.vn/rem-cua-cao-cap-vinpearl-phu-quoc-5-sao.html"
+                                                                                        href="http://congtrinh.tintam.vn/rem-cua-cao-cap-vinpearl-phu-quoc-5-sao"
                                                                                         title="Rèm Cửa Cao Cấp Vinpearl Phú Quốc 5 Sao"
                                                                                         >Rèm Cửa Cao Cấp Vinpearl Phú
                                                                                         Quốc 5 Sao</a
@@ -597,7 +597,7 @@ $productHot = $model->_get_where(array(
                                                                                     <a
                                                                                         rel="nofollow"
                                                                                         target="_blank"
-                                                                                        href="http://congtrinh.tintam.vn/rem-cua-cao-cap-vinpearl-phu-quoc-5-sao.html"
+                                                                                        href="http://congtrinh.tintam.vn/rem-cua-cao-cap-vinpearl-phu-quoc-5-sao"
                                                                                         class="p-item item-more"
                                                                                         title="Rèm Cửa Cao Cấp Vinpearl Phú Quốc 5 Sao"
                                                                                         ><span class="fa fa-link"></span
@@ -637,7 +637,7 @@ $productHot = $model->_get_where(array(
                                                                                         rel="nofollow"
                                                                                         target="_blank"
                                                                                         class="p-item-title"
-                                                                                        href="http://congtrinh.tintam.vn/man-vai-rem-vai-chong-nang-cho-truong-hoc-song-ngu-viet-my-vass.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-vai-rem-vai-chong-nang-cho-truong-hoc-song-ngu-viet-my-vass"
                                                                                         title="Màn Vải, Rèm Vải Chống Nắng Cho Trường Học Song Ngữ Việt Mỹ VASS"
                                                                                         >Màn Vải, Rèm Vải Chống Nắng Cho
                                                                                         Trường Học Song Ngữ Việt Mỹ
@@ -646,7 +646,7 @@ $productHot = $model->_get_where(array(
                                                                                     <a
                                                                                         rel="nofollow"
                                                                                         target="_blank"
-                                                                                        href="http://congtrinh.tintam.vn/man-vai-rem-vai-chong-nang-cho-truong-hoc-song-ngu-viet-my-vass.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-vai-rem-vai-chong-nang-cho-truong-hoc-song-ngu-viet-my-vass"
                                                                                         class="p-item item-more"
                                                                                         title="Màn Vải, Rèm Vải Chống Nắng Cho Trường Học Song Ngữ Việt Mỹ VASS"
                                                                                         ><span class="fa fa-link"></span
@@ -686,7 +686,7 @@ $productHot = $model->_get_where(array(
                                                                                         rel="nofollow"
                                                                                         target="_blank"
                                                                                         class="p-item-title"
-                                                                                        href="http://congtrinh.tintam.vn/giay-dan-tuong-rem-cua-khach-san-dai-hoang-gia-quan-7-tp-hcm.html"
+                                                                                        href="http://congtrinh.tintam.vn/giay-dan-tuong-rem-cua-khach-san-dai-hoang-gia-quan-7-tp-hcm"
                                                                                         title="Giấy Dán Tường, Rèm Cửa Khách Sạn Đại Hoàng Gia – Quận 7 TP.HCM"
                                                                                         >Giấy Dán Tường, Rèm Cửa Khách
                                                                                         Sạn Đại Hoàng Gia – Quận 7
@@ -695,7 +695,7 @@ $productHot = $model->_get_where(array(
                                                                                     <a
                                                                                         rel="nofollow"
                                                                                         target="_blank"
-                                                                                        href="http://congtrinh.tintam.vn/giay-dan-tuong-rem-cua-khach-san-dai-hoang-gia-quan-7-tp-hcm.html"
+                                                                                        href="http://congtrinh.tintam.vn/giay-dan-tuong-rem-cua-khach-san-dai-hoang-gia-quan-7-tp-hcm"
                                                                                         class="p-item item-more"
                                                                                         title="Giấy Dán Tường, Rèm Cửa Khách Sạn Đại Hoàng Gia – Quận 7 TP.HCM"
                                                                                         ><span class="fa fa-link"></span
@@ -735,7 +735,7 @@ $productHot = $model->_get_where(array(
                                                                                         rel="nofollow"
                                                                                         target="_blank"
                                                                                         class="p-item-title"
-                                                                                        href="http://congtrinh.tintam.vn/rem-sao-go-nha-hang-chiyoda-sushi-quan-1.html"
+                                                                                        href="http://congtrinh.tintam.vn/rem-sao-go-nha-hang-chiyoda-sushi-quan-1"
                                                                                         title="Rèm Sáo Gỗ Nhà Hàng CHIYODA SUSHI Quận 1"
                                                                                         >Rèm Sáo Gỗ Nhà Hàng CHIYODA
                                                                                         SUSHI Quận 1</a
@@ -743,7 +743,7 @@ $productHot = $model->_get_where(array(
                                                                                     <a
                                                                                         rel="nofollow"
                                                                                         target="_blank"
-                                                                                        href="http://congtrinh.tintam.vn/rem-sao-go-nha-hang-chiyoda-sushi-quan-1.html"
+                                                                                        href="http://congtrinh.tintam.vn/rem-sao-go-nha-hang-chiyoda-sushi-quan-1"
                                                                                         class="p-item item-more"
                                                                                         title="Rèm Sáo Gỗ Nhà Hàng CHIYODA SUSHI Quận 1"
                                                                                         ><span class="fa fa-link"></span
@@ -790,7 +790,7 @@ $productHot = $model->_get_where(array(
                                                                                         rel="nofollow"
                                                                                         target="_blank"
                                                                                         class="p-item-title"
-                                                                                        href="http://congtrinh.tintam.vn/man-van-phong-giay-dan-tuong-khach-san-an-gia-phat-quan-7.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-van-phong-giay-dan-tuong-khach-san-an-gia-phat-quan-7"
                                                                                         title="Giấy Dán Tường, Màn Vải, Màn Chống Nắng – Khách Sạn An Gia Phát Quận 7"
                                                                                         >Giấy Dán Tường, Màn Vải, Màn
                                                                                         Chống Nắng – Khách Sạn An Gia
@@ -799,7 +799,7 @@ $productHot = $model->_get_where(array(
                                                                                     <a
                                                                                         rel="nofollow"
                                                                                         target="_blank"
-                                                                                        href="http://congtrinh.tintam.vn/man-van-phong-giay-dan-tuong-khach-san-an-gia-phat-quan-7.html"
+                                                                                        href="http://congtrinh.tintam.vn/man-van-phong-giay-dan-tuong-khach-san-an-gia-phat-quan-7"
                                                                                         class="p-item item-more"
                                                                                         title="Giấy Dán Tường, Màn Vải, Màn Chống Nắng – Khách Sạn An Gia Phát Quận 7"
                                                                                         ><span class="fa fa-link"></span

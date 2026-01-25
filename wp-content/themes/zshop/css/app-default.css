@@ -2897,7 +2897,6 @@ font-weight: 400;
 
 .bg-white {
     background: #fff;
-    margin-top: -20px;
 }
 
 /* post-content */
@@ -2986,17 +2985,10 @@ body img {
 body ul {
   padding: 0;
 }
-body ul,
-body ol {
-  margin-left: 15px;
-}
 .rtl body ul,
 .rtl body ol {
   margin-left: 0;
   margin-right: 15px;
-}
-body ol {
-  padding-left: 15px;
 }
 body .container {
   padding: 0;
@@ -13153,7 +13145,7 @@ _:-ms-fullscreen,
 }
 .woocommerce > .cart-collaterals .cart_totals .wc-proceed-to-checkout .checkout-button,
 .woocommerce-page > .cart-collaterals .cart_totals .wc-proceed-to-checkout .checkout-button {
-  background: #ff5c00;
+  background: #009d3b;
   display: inline-block;
   text-shadow: none;
   font-weight: normal;

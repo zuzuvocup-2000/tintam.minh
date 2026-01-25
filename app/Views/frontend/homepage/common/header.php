@@ -88,12 +88,6 @@ foreach ($productCatalogue as &$category) {
                 >
                     <div class="mega-left-title"><strong>SẢN PHẨM</strong></div>
                     <div class="vc_wp_custommenu wpb_content_element">
-                        <?php 
-                        // Hàm tạo URL từ canonical
-                        function buildMenuUrl($canonical) {
-                            return '/' . $canonical . '.html';
-                        }
-                        ?>
                         <div class="wrapper_vertical_menu vertical_megamenu">
                             <!-- Menu Responsive -->
                             <div class="resmenu-container">
@@ -118,7 +112,7 @@ foreach ($productCatalogue as &$category) {
                                                 ?>
                                                 <li class="<?php echo trim($level1Class); ?>">
                                                     <a class="item-link <?php echo $hasChildren ? 'dropdown-toggle' : ''; ?>" 
-                                                       href="<?php echo $hasChildren ? '#' : buildMenuUrl($level1['canonical']); ?>">
+                                                       href="<?php echo $hasChildren ? '#' : ($level1['canonical']); ?>">
                                                         <?php echo $level1['title']; ?>
                                                     </a>
                                                     <?php if ($hasChildren): ?>
@@ -132,7 +126,7 @@ foreach ($productCatalogue as &$category) {
                                                                 ?>
                                                                 <li class="<?php echo trim($level2Class); ?>">
                                                                     <a class="item-link <?php echo $hasChildren2 ? 'dropdown-toggle' : ''; ?>" 
-                                                                       href="<?php echo $hasChildren2 ? '#' : buildMenuUrl($level2['canonical']); ?>">
+                                                                       href="<?php echo $hasChildren2 ? '#' : ($level2['canonical']); ?>">
                                                                         <?php echo $level2['title']; ?>
                                                                     </a>
                                                                     <?php if ($hasChildren2): ?>
@@ -140,7 +134,7 @@ foreach ($productCatalogue as &$category) {
                                                                         <ul class="dropdown-resmenu">
                                                                             <?php foreach ($level2['children'] as $level3): ?>
                                                                                 <li class="menu-<?php echo $level3['canonical']; ?>">
-                                                                                    <a href="<?php echo buildMenuUrl($level3['canonical']); ?>">
+                                                                                    <a href="<?php echo ($level3['canonical']); ?>">
                                                                                         <?php echo $level3['title']; ?>
                                                                                     </a>
                                                                                 </li>
@@ -171,7 +165,7 @@ foreach ($productCatalogue as &$category) {
                                         $columnCount = $hasChildren ? count($level1['children']) : 0;
                                         ?>
                                         <li class="<?php echo trim($level1Class); ?>">
-                                            <a href="<?php echo $hasChildren ? '#' : buildMenuUrl($level1['canonical']); ?>" 
+                                            <a href="<?php echo $hasChildren ? '#' : ($level1['canonical']); ?>" 
                                                class="item-link <?php echo $hasChildren ? 'dropdown-toggle' : ''; ?>">
                                                 <span class="have-title">
                                                     <span class="menu-title"><?php echo $level1['title']; ?></span>
@@ -186,7 +180,7 @@ foreach ($productCatalogue as &$category) {
                                                         $level2Class .= ' column-' . $columnCount . ' menu-' . $level2['canonical'];
                                                         ?>
                                                         <li class="<?php echo trim($level2Class); ?>">
-                                                            <a href="<?php echo $hasChildren2 ? '#' : buildMenuUrl($level2['canonical']); ?>">
+                                                            <a href="<?php echo $hasChildren2 ? '#' : ($level2['canonical']); ?>">
                                                                 <span class="have-title">
                                                                     <span class="menu-title"><?php echo $level2['title']; ?></span>
                                                                 </span>
@@ -195,7 +189,7 @@ foreach ($productCatalogue as &$category) {
                                                                 <ul class="dropdown-sub nav-level2">
                                                                     <?php foreach ($level2['children'] as $level3): ?>
                                                                         <li class="menu-<?php echo $level3['canonical']; ?>">
-                                                                            <a href="<?php echo buildMenuUrl($level3['canonical']); ?>">
+                                                                            <a href="<?php echo ($level3['canonical']); ?>">
                                                                                 <span class="have-title">
                                                                                     <span class="menu-title"><?php echo $level3['title']; ?></span>
                                                                                 </span>
@@ -241,7 +235,7 @@ foreach ($productCatalogue as &$category) {
                                                     ?>
                                                     <li class="<?php echo trim($level1Class); ?>">
                                                         <a class="item-link <?php echo $hasChildren ? 'dropdown-toggle' : ''; ?>" 
-                                                           href="<?php echo buildMenuUrl($level1['canonical']); ?>">
+                                                           href="<?php echo ($level1['canonical']); ?>">
                                                             <?php echo $level1['title']; ?>
                                                         </a>
                                                         <?php if ($hasChildren): ?>
@@ -249,7 +243,7 @@ foreach ($productCatalogue as &$category) {
                                                             <ul class="dropdown-resmenu">
                                                                 <?php foreach ($level1['children'] as $level2): ?>
                                                                     <li class="menu-<?php echo $level2['canonical']; ?>">
-                                                                        <a href="<?php echo buildMenuUrl($level2['canonical']); ?>">
+                                                                        <a href="<?php echo ($level2['canonical']); ?>">
                                                                             <?php echo $level2['title']; ?>
                                                                         </a>
                                                                     </li>
@@ -262,7 +256,7 @@ foreach ($productCatalogue as &$category) {
                                             
                                             <!-- Giỏ hàng - Static -->
                                             <li class="menu-gio-hang">
-                                                <a class="item-link" href="/cart">Giỏ hàng</a>
+                                                <a class="item-link" href="/gio-hang">Giỏ hàng</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -276,7 +270,7 @@ foreach ($productCatalogue as &$category) {
                                             $level1Class .= ' menu-' . $level1['canonical'] . ' level1';
                                             ?>
                                             <li class="<?php echo trim($level1Class); ?>">
-                                                <a href="<?php echo buildMenuUrl($level1['canonical']); ?>" 
+                                                <a href="<?php echo ($level1['canonical']); ?>" 
                                                    class="item-link <?php echo $hasChildren ? 'dropdown-toggle' : ''; ?>">
                                                     <span class="have-title">
                                                         <span class="menu-title"><?php echo $level1['title']; ?></span>
@@ -286,7 +280,7 @@ foreach ($productCatalogue as &$category) {
                                                     <ul class="dropdown-menu">
                                                         <?php foreach ($level1['children'] as $level2): ?>
                                                             <li class="column-1 menu-<?php echo $level2['canonical']; ?>">
-                                                                <a href="<?php echo buildMenuUrl($level2['canonical']); ?>">
+                                                                <a href="<?php echo ($level2['canonical']); ?>">
                                                                     <span class="have-title">
                                                                         <span class="menu-title"><?php echo $level2['title']; ?></span>
                                                                     </span>
@@ -301,7 +295,7 @@ foreach ($productCatalogue as &$category) {
                                     
                                     <!-- Giỏ hàng - Static -->
                                     <li class="menu-gio-hang revo-menu-custom level1">
-                                        <a href="/cart" class="item-link">
+                                        <a href="/gio-hang" class="item-link">
                                             <span class="have-title">
                                                 <span class="menu-title">Giỏ hàng</span>
                                             </span>

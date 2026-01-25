@@ -55,11 +55,13 @@ $widget['data'] = widget_frontend();
     </style>
 </head>
 
-<body class="page-template-default page page-id-14 theme-wapo woocommerce-cart woocommerce-page woocommerce-js elementor-default elementor-kit-11">
+<body data-rsssl="1" class="home page wp-schema-pro-2.7.16 <?php echo (isset($ishome) && $ishome == 'home') ? 'home-style1' : ''; ?> wpb-js-composer js-comp-ver-5.0.1 vc_responsive">
+	<div class="body-wrapper theme-clearfix">
+		<div class="body-wrapper-inner">
     <?php echo view('frontend/homepage/common/header') ?>
     <div class="content-header cart-page pb0 bg-white">
         <nav class="breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-            <div class="uk-container uk-container-center">
+            <div class="container">
                 <ol class="breadcrumb-list">
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         <a itemprop="item" href="" title="VapeKinhBac Trang chủ" class="home">
@@ -77,7 +79,7 @@ $widget['data'] = widget_frontend();
         </nav>
     </div>
     <main id="site-content" class="flex-grow-1" role="main">
-        <div class="uk-container uk-container-center">
+        <div class="container">
             <article class="post-14 page type-page status-publish hentry bg-white pr10 pl10" id="post-14">
                 <div class="post-inner">
                     <header class="entry-header header-group">
@@ -185,6 +187,8 @@ $widget['data'] = widget_frontend();
             </article>
         </div>
     </main>
+    </div>
+    </div>
     <script>
         <?php echo isset($script) ? $script : '' ?>
     </script>
