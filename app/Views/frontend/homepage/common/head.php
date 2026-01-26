@@ -66,9 +66,6 @@ $css = [
 <link
     rel="stylesheet"
     href="wp-content/plugins/transition-slider-lite/css/style.min.css?ver=2.14.1"
-/><link
-    rel="stylesheet"
-    href="wp-content/plugins/transition-slider-lite/css/swiper.min.css?ver=2.14.1"
 /><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css?ver=2.14.1" /><link
     rel="stylesheet"
     href="wp-content/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto.min.css?ver=5.0.1"

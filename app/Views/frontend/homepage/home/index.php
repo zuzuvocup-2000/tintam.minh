@@ -204,8 +204,8 @@ $productHot = $model->_get_where(array(
                                                     </div>
                                                     <script>
                                                         var swiper<?php echo $category['id']; ?> = new Swiper(".<?php echo $swiperThumbsId; ?>", {
-                                                            spaceBetween: 10,
-                                                            slidesPerView: 4,
+                                                            spaceBetween: 16.5,
+                                                            slidesPerView: 3.5,
                                                             freeMode: true,
                                                             watchSlidesProgress: true,
                                                         });
