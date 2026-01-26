@@ -29,6 +29,7 @@ class ConfigBie
 				'introduce' => array('type' => 'editor', 'label' => 'Nội dung giới thiệu'),
 				'gpkd' => array('type' => 'text', 'label' => 'Giấy phép kinh doanh'),
 				'logo' => array('type' => 'images', 'label' => 'Logo '),
+				'logo_mobile' => array('type' => 'images', 'label' => 'Logo Mobile'),
 				'logo_load' => array('type' => 'images', 'label' => 'Logo Loading Page'),
 				'logo_ft' => array('type' => 'images', 'label' => 'Logo Footer'),
 				'video' => array('type' => 'textarea', 'label' => 'Video trang chủ', 'title' => 'Mỗi video cách nhau bằng cách xuống dòng'),

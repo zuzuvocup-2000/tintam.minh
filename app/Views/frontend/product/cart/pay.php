@@ -57,11 +57,13 @@ $widget['data'] = widget_frontend();
     <script src="public/frontend/resources/uikit/js/uikit.min.js"></script>
 </head>
 
-<body class="page-template-default page page-id-14 theme-wapo woocommerce-cart woocommerce-page woocommerce-js elementor-default elementor-kit-11">
+<body data-rsssl="1" class="home page wp-schema-pro-2.7.16 <?php echo (isset($ishome) && $ishome == 'home') ? 'home-style1' : ''; ?> wpb-js-composer js-comp-ver-5.0.1 vc_responsive">
+	<div class="body-wrapper theme-clearfix">
+		<div class="body-wrapper-inner">
     <?php echo view('frontend/homepage/common/header') ?>
     <div class="content-header cart-page bg-white pb0">
         <nav class="breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-            <div class="uk-container uk-container-center">
+            <div class="container uk-container-center">
                 <ol class="breadcrumb-list">
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         <a itemprop="item" href="" title="VapeKinhBac Trang chủ" class="home">
@@ -79,7 +81,7 @@ $widget['data'] = widget_frontend();
         </nav>
     </div>
     <main id="site-content" class="flex-grow-1 pt50 pb50" role="main">
-        <div class="uk-container uk-container-center ">
+        <div class="                                            container uk-container-center ">
             <article class="post-15 page type-page status-publish hentry" id="post-15">
                 <div class="post-inner">
                     <header class="entry-header header-group">
@@ -129,6 +131,22 @@ $widget['data'] = widget_frontend();
                                                                 <label for="address">Tỉnh/Thành phố</label>
                                                                 <span class="woocommerce-input-wrapper"><?php echo form_dropdown('cityid', $city, set_value('cityid', (isset($member['cityid'])) ? $member['cityid'] : 0), 'class="form-control select2 m-b city"  id="city"');?></span>
                                                             </p>
+                                                            <p class="form-row form-row-wide validate-required" id="districtid_field">
+                                                            <label for="address">Quận/Huyện</label>
+                                                            <span class="woocommerce-input-wrapper">
+                                                                <select name="districtid" id="district" class="form-control select2 m-b location change-district">
+                                                                    <option value="0">[Chọn Quận/Huyện]</option>
+                                                                </select>
+                                                            </span>
+                                                        </p>
+                                                        <p class="form-row form-row-wide validate-required" id="wardid_field">
+                                                            <label for="address">Phường/Xã</label>
+                                                            <span class="woocommerce-input-wrapper">
+                                                                <select name="wardid" id="ward" class="form-control select2 m-b location change-district">
+                                                                    <option value="0">[Chọn Phường/Xã]</option>
+                                                                </select>
+                                                            </span>
+                                                        </p>
                                                             <p class="form-row form-row-wide validate-required" id="address_field">
                                                                 <label for="address">Địa chỉ&nbsp;<span class="required" title="required">*</span></label>
                                                                 <span class="woocommerce-input-wrapper"><input class="" type="address" class="input-text" name="address" id="address" placeholder="" value="<?php echo isset($member['address']) ? $member['address'] : '' ?>"  /></span>
@@ -283,7 +301,8 @@ $widget['data'] = widget_frontend();
                                 </div>
                             </div>
                         </div>
-                    
+                        </div>
+                        </div>
 
                 <div class="section-inner clearfix"></div>
             </article>
@@ -363,6 +382,84 @@ $widget['data'] = widget_frontend();
                 });
         }
     </script>
+    <script src="public/backend/plugin/select2/dist/js/select2.min.js"></script>
+
+    <script>
+    if ($('.select2').length) {
+        $('.select2').select2();
+    }
+
+    $(document).on('change', '#city', function(e, data) {
+        let _this = $(this);
+        let id = _this.val();
+        let param = {
+            'id': id,
+            'text': '[Chọn Quận/Huyện]',
+            'table': 'vn_district',
+            'trigger_district': (typeof(data) != 'undefined') ? true : false,
+            'where': {
+                'provinceid': id
+            },
+            'select': 'districtid as id, name',
+            'object': '#district',
+        };
+        get_location(param);
+    });
+
+    if (typeof(cityid) != 'undefined' && cityid != '') {
+        $('#city').val(cityid).trigger('change', [{
+            'trigger': true
+        }]);
+    }
+
+    $(document).on('change', '#district', function() {
+        let _this = $(this);
+        let id = _this.val();
+        let param = {
+            'id': id,
+            'text': '[Chọn Phường/Xã]',
+            'table': 'vn_ward',
+            'where': {
+                'districtid': id
+            },
+            'select': 'wardid as id, name',
+            'object': '#ward',
+        };
+        get_location(param);
+    });
+
+    $(document).on('change', '#section-payment-method input:radio.input-radio-method', function() {
+        $('#section-payment-method .content-box-row.content-box-row-secondary').addClass('hidden');
+        var id = $(this).attr('id');
+
+        if (id) {
+            var sub = $('body').find('.content-box-row.content-box-row-secondary[for=' + id + ']')
+
+            if (sub && sub.length > 0) {
+                $(sub).removeClass('hidden');
+            }
+        }
+    });
+
+    function get_location(param) {
+        if (districtid == '' || param.trigger_district == false) districtid = 0;
+        if (wardid == '' || param.trigger_ward == false) wardid = 0;
+
+        let formURL = 'ajax/dashboard/get_location';
+        $.post(formURL, {
+                param: param
+            },
+            function(data) {
+                let json = JSON.parse(data);
+                if (param.object == '#district') {
+                    $(param.object).html(json.html).val(districtid).trigger('change');
+                } else if (param.object == '#ward') {
+                    $(param.object).html(json.html).val(wardid);
+                }
+
+            });
+    }
+</script>
 </body>
 
 </html>

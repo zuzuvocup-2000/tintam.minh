@@ -859,7 +859,7 @@ body.woocommerce-checkout {
     float: left;
 }
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-    background-color: #a46497;
+    background-color: #009d3b;
     color: #fff;
     -webkit-font-smoothing: antialiased;
 }
@@ -13497,7 +13497,7 @@ _:-ms-fullscreen,
 }
 .woocommerce .return-to-shop .button.wc-backward,
 .woocommerce-page .return-to-shop .button.wc-backward {
-  background-color: #ff5c00;
+  background-color: #009d3b;
   color: #fff;
   margin-bottom: 30px;
 }

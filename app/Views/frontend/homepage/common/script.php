@@ -226,7 +226,7 @@
         });
     })(jQuery);
 </script>
-<!-- Autoptimize file đã bị xóa do lỗi currentEffect -->
+<script src="public/backend/plugin/select2/dist/js/select2.min.js"></script>
 <script src="public/frontend/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 <script src="public/frontend/plugins/toastr/toastr.min.js"></script>
 <script src="public/frontend/function.js" type="text/javascript"></script>

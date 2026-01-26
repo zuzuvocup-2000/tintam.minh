@@ -1,5 +1,7 @@
 <?php
 $css = [
+    ASSET_FRONTEND . 'select2.min.css',
+    ASSET_FRONTEND . 'uikit/css/uikit.modify.css',
     ASSET_FRONTEND . 'minh.css',
     ASSET_FRONTEND . 'style.css',
     ASSET_FRONTEND . 'plugins/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css',
@@ -10,6 +12,7 @@ $css = [
 <?php foreach ($css as $key => $val) {
     echo '<link href="' . $val . '" rel="stylesheet">';
 } ?>
+<link rel='stylesheet' id='select2-css' href='wp-content/plugins/woocommerce/assets/css/select2.css?ver=7.4.1' type='text/css' media='all' />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">

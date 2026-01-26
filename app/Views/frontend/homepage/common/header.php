@@ -313,31 +313,22 @@ foreach ($productCatalogue as &$category) {
 <div class="Nav-50 fix">
     <div class="menu-mobi-news" id="top">
         <ul>
-            <li>
-                <a href="https://tintam.vn/bang-gia-tita" title="Bảng giá màn cửa"
-                    ><span title="">Bảng giá</span></a
-                >
-            </li>
-            <li>
-                <a rel="nofollow" target="_blank" href="https://wallpaper.vn/" title="Sản phẩm"
-                    ><span title="">Mẫu đẹp</span></a
-                >
-            </li>
-            <li>
-                <a rel="nofollow" target="_blank" href="http://congtrinh.tintam.vn/" title="Công trình"
-                    ><span title="">Công trình</span></a
-                >
-            </li>
-            <li>
-                <a href="https://tintam.vn/lien-he" title="Liên hệ"><span title="">Liên hệ</span></a>
-            </li>
+            <?php if (!empty($sub_nav['data'])): ?>
+                <?php foreach ($sub_nav['data'] as $level1): ?>
+                    <li>
+                        <a href="<?php echo $level1['canonical']; ?>" title="<?php echo $level1['title']; ?>">
+                            <span title=""><?php echo $level1['title']; ?></span>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
     </div>
 </div>
 <div class="mob_menu_header_div mobmenu">
     <div class="logo-holder">
         <a href="https://tintam.vn" class="headertext"
-            ><img src="https://tintam.vn/wp-content/uploads/2017/02/logo-mobile.png" alt="Logo Header Menu"
+            ><img src="<?php echo $general['homepage_logo_mobile']; ?>" alt="Logo Header Menu"
         /></a>
     </div>
     <div class="mobmenur-container">
@@ -352,99 +343,37 @@ foreach ($productCatalogue as &$category) {
         <div class="rightmtop"></div>
         <ul id="mobmenuright">
             <li></li>
-            <li class="menu-rem-vai-cao-cap">
-                <a class="item-link" href="https://tintam.vn/rem-cua-phong-khach.html"
-                    ><span class="menu-title">Rèm vải cao cấp</span></a
-                >
-            </li>
-            <li class="menu-rem-cau-vong">
-                <a class="item-link" href="https://tintam.vn/rem-cau-vong-han-quoc.html"
-                    ><span class="menu-title">Rèm cầu vồng</span></a
-                >
-            </li>
-            <li class="menu-rem-go">
-                <a class="item-link" href="https://tintam.vn/rem-sao-go.html"
-                    ><span class="menu-title">Rèm gỗ</span></a
-                >
-            </li>
-            <li class="menu-rem-vai-la-doc-dream-curtain">
-                <a class="item-link" href="https://tintam.vn/rem-vai-la-doc-dream-curtain.html"
-                    ><span class="menu-title">Rèm vải lá dọc Dream curtain</span></a
-                >
-            </li>
-            <li class="menu-rem-vach-ngan-to-ong">
-                <a class="item-link" href="https://tintam.vn/rem-vach-ngan-to-ong.html"
-                    ><span class="menu-title">Rèm vách ngăn tổ ong</span></a
-                >
-            </li>
-            <li class="menu-rem-cuon">
-                <a class="item-link" href="https://tintam.vn/rem-cuon-chong-nang.html"
-                    ><span class="menu-title">Rèm cuốn</span></a
-                >
-            </li>
-            <li class="menu-rem-sao-nhom">
-                <a class="item-link" href="https://tintam.vn/rem-sao-nhom.html"
-                    ><span class="menu-title">Rèm sáo nhôm</span></a
-                >
-            </li>
-            <li class="menu-rem-la-dung">
-                <a class="item-link" href="https://tintam.vn/rem-sao-la-doc-chong-nang.html"
-                    ><span class="menu-title">Rèm lá đứng</span></a
-                >
-            </li>
-            <li class="menu-rem-hat-pha-le">
-                <a class="item-link" href="/sp/rem-hat-pha-le"
-                    ><span class="menu-title">Rèm hạt pha lê</span></a
-                >
-            </li>
-            <li class="menu-rem-khach-san">
-                <a class="item-link" href="/sp/man-rem-khach-san"
-                    ><span class="menu-title">Rèm khách sạn</span></a
-                >
-            </li>
-            <li class="menu-">
-                <a class="item-link" href="#"><span class="menu-title">……………………………………..</span></a>
-            </li>
-            <li class="menu-tranh-trang-guong-3d">
-                <a class="item-link" href="https://tintam.vn/tranh-trang-guong-3d-trang-tri-dep-tphcm.html"
-                    ><span class="menu-title">Tranh tráng gương 3d</span></a
-                >
-            </li>
-            <li class="menu-giay-dan-tuong-dep">
-                <a class="item-link" href="/sp/giay-dan-tuong-dep-sang-trong"
-                    ><span class="menu-title">Giấy dán tường đẹp</span></a
-                >
-            </li>
-            <li class="menu-giay-dan-tuong-3d">
-                <a class="item-link" href="/sp/giay-dan-tuong-3d"
-                    ><span class="menu-title">Giấy dán tường 3d</span></a
-                >
-            </li>
-            <li class="menu-giay-dan-tuong-gia-da">
-                <a class="item-link" href="https://tintam.vn/giay-dan-tuong-3d-gia-gach-da.html"
-                    ><span class="menu-title">Giấy dán tường giả đá</span></a
-                >
-            </li>
-            <li class="menu-giay-dan-tuong-hien-dai">
-                <a class="item-link" href="/sp/giay-dan-tuong-hien-dai"
-                    ><span class="menu-title">Giấy dán tường hiện đại</span></a
-                >
-            </li>
-            <li class="menu-giay-dan-tuong-co-dien">
-                <a class="item-link" href="/sp/giay-dan-tuong-co-dien"
-                    ><span class="menu-title">Giấy dán tường cổ điển</span></a
-                >
-            </li>
-            <li class="menu-giay-dan-tuong-phong-khach">
-                <a class="item-link" href="/sp/giay-dan-tuong-phong-khach"
-                    ><span class="menu-title">Giấy dán tường phòng khách</span></a
-                >
-            </li>
-            <li class="menu-giay-dan-tuong-phong-ngu">
-                <a class="item-link" href="/sp/giay-dan-tuong-phong-ngu"
-                    ><span class="menu-title">Giấy dán tường phòng ngủ</span></a
-                >
-            </li>
+            <?php if (!empty($main_nav['data'])): ?>
+                <?php foreach ($main_nav['data'] as $level1): ?>
+                    <li class="menu-<?php echo $level1['canonical']; ?>">
+                        <a class="item-link" href="<?php echo $level1['canonical']; ?>">
+                            <span class="menu-title"><?php echo $level1['title']; ?></span>
+                        </a>
+                        <?php if (!empty($level1['children'])): ?>
+                            <ul class="sub-menu">
+                                <?php foreach ($level1['children'] as $level2): ?>
+                                    <li class="menu-<?php echo $level2['canonical']; ?>">
+                                        <a class="item-link" href="<?php echo $level2['canonical']; ?>">
+                                            <span class="menu-title"><?php echo $level2['title']; ?></span>
+                                        </a>
+                                        <?php if (!empty($level2['children'])): ?>
+                                            <ul class="sub-menu">
+                                                <?php foreach ($level2['children'] as $level3): ?>
+                                                    <li class="menu-<?php echo $level3['canonical']; ?>">
+                                                        <a class="item-link" href="<?php echo $level3['canonical']; ?>">
+                                                            <span class="menu-title"><?php echo $level3['title']; ?></span>
+                                                        </a>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
         <div class="rightmbottom"></div>
     </div>

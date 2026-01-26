@@ -91,7 +91,7 @@ Text Domain: wapo
     --header-current-page: var(--color-primary);
     --breadcrumbs-txt: #080808;
     --breadcrumbs-a: #ffffff;
-    --breadcrumbs-a-bg: var(--btn-bg-color);
+    --breadcrumbs-a-bg:#009d3b;
     --breadcrumbs-a-hover: #ffffff;
     --breadcrumbs-a-hover-bg: var(--btn-hover-color);
     --breadcrumbs-border: transparent;
@@ -107,7 +107,7 @@ Text Domain: wapo
 /* Features colors */
 :root {
     --social-icon-txt-color: #ffffff;
-    --social-icon-color: var(--btn-bg-color);
+    --social-icon-color:#009d3b;
     --social-icon-hover-color: var(--btn-hover-color);
     --price-color: var(--title-color);;
     --price-tile-color: var(--title-color);;
@@ -774,7 +774,7 @@ h1 {
 
 #site-footer.nav-white-desktop button:hover,
 #site-footer.nav-white-desktop input[type="submit"] {
-    background: var(--btn-bg-color) !important;
+    background:#009d3b !important;
 }
 
 #site-footer.nav-white-desktop .footer-top {
@@ -1140,7 +1140,7 @@ h1 {
     font-size: 14px;
     text-align: left;
     font-weight: 500;
-    color: #FD6E47;
+    color: #009d3b
     line-height: 1;
     text-transform: capitalize;
     letter-spacing: 0;
@@ -1150,7 +1150,7 @@ h1 {
     font-size: 14px;
 }
 .breadcrumbs .breadcrumb-list li i{
-    color: #FD6E47;
+    color: #009d3b
     margin: 0 10px;
 }
 
@@ -1453,7 +1453,7 @@ h1 {
 
 .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-container--default .select2-results__option--highlighted[data-selected] {
-    background-color: var(--btn-bg-color);
+    background-color:#009d3b;
 }
 
 @media (min-width: 576px) {
@@ -2423,7 +2423,7 @@ main .widget-content ul li.recentcomments > a:hover,
     line-height: 19px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: var(--btn-bg-color);
+    background:#009d3b;
     color: #ffffff;
     height: 41px;
     border: none;
@@ -5437,7 +5437,7 @@ body .elementor-button.elementor-size-xs {
     text-shadow: none !important;
     line-height: 22px;
     transition: all .45s;
-    background: var(--btn-bg-color);
+    background:#009d3b;
     box-shadow: 0 20px 30px 0 rgba(172, 172, 172, 0.4);
     border: none;
     display: flex;
@@ -5448,7 +5448,7 @@ body .elementor-button.elementor-size-lg,
 body .elementor-button.elementor-size-md,
 body .elementor-button.elementor-size-sm,
 body .elementor-button.elementor-size-xs {
-    background: var(--btn-bg-color);
+    background:#009d3b;
 }
 
 /* Disables transitions on touch screens */
@@ -5983,6 +5983,8 @@ form[name="checkout"] h4 {
     line-height: 2.875rem;
     padding: 0 1rem;
     color: var(--primary-dark-color);
+    height: 38px;
+    line-height: 38px;
 }
 
 .woocommerce-MyAccount-content .select2-container--default .select2-selection--single .select2-selection__rendered {

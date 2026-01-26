@@ -941,9 +941,24 @@ swiper {
 .prd_quantity {
     width: 50px !important;
 }
-
+.swiper-button-next{
+    top: 10% !important;
+    width: 30px !important;
+    height: 100% !important;
+}
+.swiper-button-next svg{
+    width: 15px !important;
+}
+.swiper-button-prev{
+    top: 10% !important;
+    width: 30px !important;
+    height: 100% !important;
+}
+.swiper-button-prev svg{
+    width: 15px !important;
+}
 @media screen and (max-width: 1025px) {
-    /* .mobmenu {
+    .show-nav-right .mobmenu {
         display: block !important;
-    } */
+    }
 }

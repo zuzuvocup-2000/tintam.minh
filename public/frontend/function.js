@@ -344,3 +344,10 @@ $(window).scroll(function () {
 
     }
 });
+
+$(document).ready(function () {
+    $('.mobmenur-container').on('click', function () {
+        $('body').toggleClass('show-nav-right');
+        return false;
+    });
+});
