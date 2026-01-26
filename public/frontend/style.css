@@ -962,3 +962,16 @@ swiper {
         display: block !important;
     }
 }
+.cart-order-button a {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background: #2a9700;
+    color: white;
+    border: 1px solid transparent;
+}
+#cart-done-page{
+    padding: 20px 0;
+}
