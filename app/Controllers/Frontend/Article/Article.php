@@ -25,7 +25,7 @@ class Article extends FrontendController
         $module_extract = explode("_", $this->data['module']);
         $keyword = $this->condition_keyword();
         $this->data['object'] = $this->AutoloadModel->_get_where([
-            'select' => 'tb1.id,tb1.viewed,tb1.album,tb3.template,tb3.sub_title,tb3.sub_content, tb1.catalogueid, tb1.image,tb4.title as cat_title,tb1.catalogue, tb4.canonical as cat_canonical, tb3.title, tb3.canonical, tb3.meta_title, tb3.meta_description,tb3.icon, tb3.viewed, tb3.description, tb3.content, tb1.created_at, tb5.fullname, tb1.video, tb1.productid',
+            'select' => 'tb1.id,tb1.viewed,tb1.album,tb3.template,tb3.sub_title,tb3.sub_content, tb1.catalogueid, tb1.image,tb4.title as cat_title,tb1.catalogue, tb4.canonical as cat_canonical, tb3.title, tb3.canonical, tb3.meta_title, tb3.meta_description,tb3.icon, tb3.description, tb3.content, tb1.created_at, tb5.fullname, tb1.video, tb1.productid',
             'table' => $module_extract[0] . ' as tb1',
             'where' => [
                 'tb1.deleted_at' => 0,
@@ -383,7 +383,7 @@ class Article extends FrontendController
         $idList = [];
         if (!isset($_COOKIE['COUNT_' . $this->data['module']]) || empty($_COOKIE['COUNT_' . $this->data['module']])) {
             array_push($idList, $id);
-            // setcookie('COUNT_'.$this->data['module'], json_encode($idList), time() + 1*24*3600, "/");
+            setcookie('COUNT_' . $this->data['module'], json_encode($idList), time() + 1 * 24 * 3600, "/");
             $cookie = $this->AutoloadModel->_update([
                 'table' => $this->data['module'],
                 'where' => [
@@ -393,7 +393,6 @@ class Article extends FrontendController
                 ],
                 'data' => [
                     'viewed' => $param['viewed'] + 1,
-                    'created_at' => $this->currentTime
                 ]
             ]);
         } else {
@@ -417,7 +416,6 @@ class Article extends FrontendController
                     ],
                     'data' => [
                         'viewed' => $param['viewed'] + 1,
-                        'created_at' => $this->currentTime
                     ]
                 ]);
             }
