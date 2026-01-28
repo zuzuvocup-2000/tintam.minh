@@ -61,20 +61,20 @@ helper('mydatafrontend');
 				<a href="tel:0913106109"
 					><div class="icallme cphone"><span class="label-callme">Hotline: 0913.106.109</span></div></a
 				>
-				<a href="https://zalo.me/0913106109" rel="nofollow" target="_blank"
+				<a href="<?php echo $general['social_zalo'] ? $general['social_zalo'] : '' ?>" rel="nofollow" target="_blank"
 					><div class="icallme czalo">
-						<span class="label-callme">Nhắn Tin Nhanh (Zalo 0913-106-109)</span>
+						<span class="label-callme">Nhắn Tin Nhanh (Zalo <?php echo $general['contact_hotline'] ? $general['contact_hotline'] : '' ?>)</span>
 					</div></a
 				>
 				<a
-					href="https://youtube.com/playlist?list=PL5ewhXw7cGnczswdQWH20ncswcH-uaujk&amp;si=XqDsJbT4HJer-vMq"
+					href="<?php echo $general['social_youtube'] ? $general['social_youtube'] : '' ?>"
 					rel="nofollow"
 					target="_blank"
 					><div class="icallme cyoutube">
 						<span class="label-callme">Youtube kinh nghiệm Rèm cửa</span>
 					</div></a
 				>
-				<a href="http://m.me/mancuasaigon" rel="nofollow" target="_blank"
+				<a href="<?php echo $general['social_messenger'] ? $general['social_messenger'] : '' ?>" rel="nofollow" target="_blank"
 					><div class="icallme cfb"><span class="label-callme">Chat Messenger</span></div></a
 				>
 			</div>
