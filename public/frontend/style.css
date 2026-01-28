@@ -1447,3 +1447,192 @@ swiper {
         margin-top: 40px;
     }
 }
+
+
+
+ul#menu-tudev-home-sp li{
+    margin: 20px 0 !important;
+}
+
+/* Sub content blocks styling */
+.sub-content-blocks {
+    margin-top: 40px;
+}
+
+.sub-block {
+    background: #fff;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-left: 5px solid #009d3b;
+    transition: all 0.3s ease;
+}
+
+.sub-block .sub-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #009d3b;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sub-block .sub-description {
+    line-height: 1.8;
+    color: #333;
+    font-size: 16px;
+}
+
+.sub-block .sub-description p {
+    margin-bottom: 15px;
+}
+
+.sub-block .sub-description img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+/* Table styling inside sub-content */
+.sub-block .sub-description table {
+    width: 100% !important;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid #e1e8f5;
+    background: #fff;
+}
+
+.sub-block .sub-description table th,
+.sub-block .sub-description table td {
+    padding: 12px 15px;
+    border: 1px solid #e1e8f5;
+    text-align: left;
+}
+
+.sub-block .sub-description table th {
+    background-color: #f7f9fc;
+    color: #009d3b;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.sub-block .sub-description table tr:nth-child(even) {
+    background-color: #fcfdfe;
+}
+
+.sub-block .sub-description table tr:hover {
+    background-color: #f1f6ff;
+}
+
+/* UL/LI styling inside sub-content */
+.sub-block .sub-description ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+.sub-block .sub-description ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.sub-block .sub-description ul li::before {
+    content: "\f00c"; /* FontAwesome check icon */
+    font-family: FontAwesome;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #009d3b;
+    font-size: 14px;
+}
+
+.sub-block .sub-description ol {
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.sub-block .sub-description ol li {
+    margin-bottom: 12px;
+    color: #333;
+}
+
+/* Button & Link styling inside sub-content - Prominent Version */
+.sub-block .sub-description a:not(.btn):not(.button) {
+    color: #009d3b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 2px;
+    border-bottom: 2px solid rgba(30, 115, 190, 0.2);
+}
+
+.sub-block .sub-description a:not(.btn):not(.button):hover {
+    color: #16568e;
+    border-bottom-color: #009d3b;
+    background: rgba(30, 115, 190, 0.05);
+}
+
+/* Premium Button style */
+.sub-block .sub-description button,
+.sub-block .sub-description .btn,
+.sub-block .sub-description a.button {
+    display: inline-block;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #009d3b 0%, #4facfe 100%);
+    color: #fff !important;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(30, 115, 190, 0.35);
+    margin: 15px 0;
+    text-decoration: none !important;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.sub-block .sub-description button:hover,
+.sub-block .sub-description .btn:hover,
+.sub-block .sub-description a.button:hover {
+    background: linear-gradient(135deg, #16568e 0%, #009d3b 100%);
+    box-shadow: 0 12px 30px rgba(30, 115, 190, 0.5);
+    transform: translateY(-4px) scale(1.03);
+    color: #fff !important;
+}
+
+/* Adding a shine effect on hover */
+.sub-block .sub-description button::after,
+.sub-block .sub-description .btn::after,
+.sub-block .sub-description a.button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    transition: all 0.6s ease;
+}
+
+.sub-block .sub-description button:hover::after,
+.sub-block .sub-description .btn:hover::after,
+.sub-block .sub-description a.button:hover::after {
+    left: 150%;
+}
+
+
+
+

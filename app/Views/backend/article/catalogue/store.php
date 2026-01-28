@@ -250,7 +250,7 @@
 									<span style="color:#000;" class="uk-flex uk-flex-middle">
 										<?php echo form_radio('template', set_value('template', 'frontend/article/catalogue/type'), ((isset($_POST['template']) && $_POST['template'] == 'frontend/article/catalogue/type' || (isset($article_catalogue['template']) && $article_catalogue['template'] == 'frontend/article/catalogue/type')) ? true : false),'class=""   id="learn" style="margin-top:0;margin-right:10px;" '); ?>
 
-										<label for="learn" style="margin:0;cursor:pointer;">Giao diện Dịch vụ</label>
+										<label for="learn" style="margin:0;cursor:pointer;">Giao diện Bảng giá</label>
 									</span>
 								</div>
 							</div>
