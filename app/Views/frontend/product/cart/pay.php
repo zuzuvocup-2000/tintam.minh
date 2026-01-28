@@ -53,8 +53,7 @@ $widget['data'] = widget_frontend();
             --color-primary: <?php echo $general['homepage_color'] ?> !important;
         }
     </style>
-    <script src="public/frontend/resources/js/jquery-3.1.1.min.js"></script>
-    <script src="public/frontend/resources/uikit/js/uikit.min.js"></script>
+    <script src="public/frontend/uikit/js/uikit.min.js"></script>
 </head>
 
 <body data-rsssl="1" class="home page wp-schema-pro-2.7.16 <?php echo (isset($ishome) && $ishome == 'home') ? 'home-style1' : ''; ?> wpb-js-composer js-comp-ver-5.0.1 vc_responsive">
@@ -315,7 +314,6 @@ $widget['data'] = widget_frontend();
     <?php echo view('frontend/homepage/common/script') ?>
     <?php echo view('frontend/homepage/common/offcanvas') ?>
     <?php echo view('backend/dashboard/common/notification') ?>
-    <script src="public/frontend/resources/cart.js"></script>
     <script>
 
         $(document).on('change', '#city', function(e, data){

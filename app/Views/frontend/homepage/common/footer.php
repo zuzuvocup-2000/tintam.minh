@@ -2,6 +2,7 @@
     $footer_menu = get_menu(array('keyword' => 'footer-menu', 'language' => $language, 'output' => 'array'));
     $video = get_slide(['keyword' => 'video', 'language' => $language]);
     $vtv = get_slide(['keyword' => 'vtv', 'language' => $language]);
+    $showroom = get_slide(['keyword' => 'showroom', 'language' => $language]);
 ?>
 <footer id="footer" class="footer default theme-clearfix">
     <div class="main-footer">
@@ -327,7 +328,69 @@
                 font-family: sans-serif;
             }
         </style>
-        <div id="footerjs"></div>
+        <?php if(isset($showroom) && is_array($showroom) && count($showroom)) { ?>
+            <div id="footerjs">
+                <div class="footer-content-new tshowroom">
+                    <p class="title-video-new">
+                        <i
+                            style="color: #fff !important; margin-top: 5px"
+                            class="fa fa-building fa2x fa-icon-dc"
+                        ></i>
+                        <?php echo $showroom[0]['cat_title']; ?>:
+                    </p>
+                    <p class="nhanvien">
+                        <img
+                            width="100%"
+                            src="<?php echo $showroom[0]['image']; ?>"
+                            alt="<?php echo $showroom[0]['cat_title']; ?>"
+                        />
+                    </p>
+                    
+                    <div class="fshowroom">
+                        <?php foreach ($showroom as $key => $value) { ?>
+                        <?php if($key == 0) {continue; } ?>
+                        <div class="colfooter fcol1">
+                            <div class="footer-border">
+                                <div class="sh-image">
+                                    <img
+                                        src="<?php echo $value['image']; ?>"
+                                        alt="<?php echo $value['title']; ?>"
+                                    />
+                                </div>
+                                <div class="sh-address">
+                                    <p class="sh-address-vn">
+                                        <span
+                                            ><img
+                                                src="public/frontend/img/icon18.png"
+                                                border="0"
+                                                alt="<?php echo $value['title']; ?>"
+                                            /><?php echo $value['alt']; ?></span
+                                        >
+                                    </p>
+                                    <p class="sh-address-tp">
+                                        <i class="fa fa-map-marker fa2x fa-icon-dc"></i>
+                                        <span>Showroom</span> <?php echo $value['title']; ?>:
+                                    </p>
+                                    <p class="dcmap"><?php echo $value['canonical']; ?></p>
+                                    <p class="f-tel">
+                                        Hotline:<a class="emobi" href="tel:<?php echo $value['description']; ?>"> <?php echo $value['description']; ?></a>
+                                    </p>
+                                    <span class="sh-map"
+                                        ><a
+                                            href="<?php echo $value['content']; ?>"
+                                            rel="nofollow"
+                                            target="_blank"
+                                            >Xem Bản đồ lớn</a
+                                        ></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
     </div>
 </footer>
 <style>

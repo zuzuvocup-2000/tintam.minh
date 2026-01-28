@@ -251,7 +251,7 @@ class Product extends FrontendController
             'where_in' => $id,
             'group_by' => 'tb3.id',
             'order_by' => 'tb3.order desc, tb3.id desc',
-            'limit' => 12
+            'limit' => 4
         ], TRuE);
         return $product_general;
     }

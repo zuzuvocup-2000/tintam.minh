@@ -941,9 +941,9 @@ body .container {
     height: 60px;
     border-radius: 50%;
     margin-right: 2%;
-    padding-left: 3px;
+    padding-left: 10px;
     border: 1px solid #00ab4f;
-    font-size: 57px;
+    font-size: 45px;
 }
 .call-div1 .fa {
 	margin: -1px 0 0 2px!important;
@@ -3516,7 +3516,7 @@ select:-webkit-autofill {
 }
 .item-price {
   font-size: 18px;
-  color: #ff5c00;
+  color: #ff5c00 !important;
   overflow: hidden;
   display: flex;
 }
@@ -3533,6 +3533,8 @@ select:-webkit-autofill {
   float: left;
   margin: 0;
   text-decoration: none;
+  background: transparent !important;
+  color: #ff5c00 !important;
 }
 .rtl .item-price ins {
   float: right;
