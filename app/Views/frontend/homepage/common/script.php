@@ -229,4 +229,6 @@
 <script src="public/backend/plugin/select2/dist/js/select2.min.js"></script>
 <script src="public/frontend/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 <script src="public/frontend/plugins/toastr/toastr.min.js"></script>
+<script src="public/frontend/uikit/js/uikit.min.js"></script>
+<script src="public/frontend/uikit/js/components/lightbox.min.js"></script>
 <script src="public/frontend/function.js" type="text/javascript"></script>

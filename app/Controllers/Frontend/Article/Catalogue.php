@@ -93,7 +93,7 @@ class Catalogue extends FrontendController{
         }
         $seoPage = '';
         $page = (int)$page;
-        $perpage = ($this->request->getGet('perpage')) ? $this->request->getGet('perpage') : 10;
+        $perpage = ($this->request->getGet('perpage')) ? $this->request->getGet('perpage') : 12;
         $keyword = $this->condition_keyword();
         $catalogue = $this->condition_catalogue($id);
         $this->data['catalogue'] = $catalogue;
@@ -269,6 +269,7 @@ class Catalogue extends FrontendController{
         }
         $catid_func = (isset($get['catalogueid']) && $get['catalogueid'] != 0 ? $get['catalogueid'] : $id);
         $catalogue = $this->condition_catalogue($catid_func);
+        $limit = 12;
         $listObject = $this->AutoloadModel->_get_where([
             'select' => 'tb1.id,tb1.viewed, tb1.image,tb4.title as cat_title,tb1.catalogue, tb4.canonical as cat_canonical, tb3.title, tb3.canonical, tb3.meta_title, tb3.meta_description,tb3.icon, tb3.viewed, tb3.description, tb3.content, tb1.created_at, tb5.fullname',
             'table' => $module_extract[0].' as tb1',
@@ -290,7 +291,7 @@ class Catalogue extends FrontendController{
                     'user as tb5','tb1.userid_created = tb5.id', 'inner'
                 ]
             ],
-            'limit' => 13,
+            'limit' => $limit + 1,
             'where_in' => $catalogue['where_in'],
             'where_in_field' => $catalogue['where_in_field'],
             'start' => $start - 1,
@@ -300,7 +301,7 @@ class Catalogue extends FrontendController{
         $html = '';
         if(isset($listObject) && is_array($listObject) && count($listObject)){
             foreach ($listObject as $key => $value) {
-                if(count($listObject) == 13 && count($listObject) - 1 == $key) {break;}
+                if(count($listObject) == ($limit + 1) && count($listObject) - 1 == $key) {break;}
                 
                 // Tạo category slug
                 $catSlug = '';
@@ -313,7 +314,7 @@ class Catalogue extends FrontendController{
                 // Tạo URLs
                 $articleUrl = base_url($value['canonical'] . HTSUFFIX);
                 $articleImage = base_url($value['image']);
-                $externalLink = 'http://congtrinh.tintam.vn/' . $value['canonical'] . '.html';
+                $externalLink = $value['canonical'];
                 
                 // Lấy popup image
                 $popupImage = $articleImage;
@@ -331,8 +332,8 @@ class Catalogue extends FrontendController{
                 $html .= '<img src="' . $articleImage . '" class="attachment-large size-large wp-post-image" alt="' . htmlspecialchars($value['title']) . '" />';
                 $html .= '</a>';
                 $html .= '<div class="p-item-content">';
-                $html .= '<a rel="nofollow" target="_blank" class="p-item-title" href="' . $externalLink . '" title="' . htmlspecialchars($value['title']) . '">' . htmlspecialchars($value['title']) . '</a>';
-                $html .= '<a rel="nofollow" target="_blank" href="' . $externalLink . '" class="p-item item-more" title="' . htmlspecialchars($value['title']) . '"><span class="fa fa-link"></span></a>';
+                $html .= '<a rel="nofollow" class="p-item-title" href="' . $externalLink . '" title="' . htmlspecialchars($value['title']) . '">' . htmlspecialchars($value['title']) . '</a>';
+                $html .= '<a rel="nofollow" href="' . $externalLink . '" class="p-item item-more" title="' . htmlspecialchars($value['title']) . '"><span class="fa fa-link"></span></a>';
                 $html .= '<a href="' . $popupImage . '" class="p-item item-popup" title="' . htmlspecialchars($value['title']) . '"><span class="fa fa-search"></span></a>';
                 $html .= '</div>';
                 $html .= '</div>';
@@ -346,7 +347,7 @@ class Catalogue extends FrontendController{
             'viewmore' => false,
             'canonical' => $actual_link,
         ];
-        if(count($listObject) == 13){
+        if(count($listObject) == ($limit + 1)){
             $json['viewmore'] = true;
         }
         echo json_encode($json);die();

@@ -7599,9 +7599,7 @@ ul.dropdown-sub.nav-level2 {
 .revo-portfolio .btn-loadmore .des-load:hover {
   opacity: 0.8;
 }
-.revo-portfolio .btn-loadmore .des-load:before {
-  content: attr(data-label);
-}
+
 .revo-portfolio .btn-loadmore.btn-loaded  .des-load:before {
   content: attr(data-label-loaded);
 }

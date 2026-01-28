@@ -34,18 +34,27 @@
                                             data-style="fitRows"
                                             data-attributes="grid-item p-lg-4 p-md-3 p-sm-2 p-xs-1"
                                         >
-                                            <div class="portfolio-tab">
-                                                <ul id="tab_ya_portfolio_2">
-                                                    <li class="selected" data-portfolio-filter="*">Tất cả</li>
-                                                    <li data-portfolio-filter=".man-rem-cua" class="">Màn rèm cửa</li>
-                                                    <li data-portfolio-filter=".rem-van-phong" class="">
-                                                        Rèm văn phòng
-                                                    </li>
-                                                    <li data-portfolio-filter=".giay-dan-tuong" class="">
-                                                        Giấy dán tường
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <?php if(isset($child) && is_array($child) && count($child)): ?>
+                                                <div class="portfolio-tab">
+                                                    <ul id="tab_ya_portfolio_2">
+                                                        <?php 
+                                                            $current_canonical = $detailCatalogue['canonical'];
+                                                            $parent_canonical = $breadcrumb[0]['canonical'];
+                                                            $is_parent_active = ($current_canonical == $parent_canonical);
+                                                        ?>
+                                                        <li class="<?= ($is_parent_active) ? 'selected' : '' ?>">
+                                                            <a href="<?= base_url($parent_canonical . HTSUFFIX) ?>">Tất cả</a>
+                                                        </li>
+                                                        <?php foreach($child as $val): 
+                                                            $is_active = ($current_canonical == $val['canonical']);
+                                                        ?>
+                                                            <li class="<?= ($is_active) ? 'selected' : '' ?>">
+                                                                <a href="<?= base_url($val['canonical'] . HTSUFFIX) ?>"><?= $val['title'] ?></a>
+                                                            </li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                </div>
+                                            <?php endif; ?>
                                             <div class="portfolio-container row">
                                                 <ul
                                                     id="container_ya_portfolio_2"
@@ -65,7 +74,7 @@
                                                             // Tạo URLs
                                                             $articleUrl = base_url($item['canonical'] . HTSUFFIX);
                                                             $articleImage = !empty($item['image']) ? base_url($item['image']) : '';
-                                                            $externalLink = 'http://congtrinh.tintam.vn/' . $item['canonical'] . '.html';
+                                                            $externalLink = $item['canonical'];
                                                             
                                                             // Lấy popup image (có thể dùng image chính hoặc album)
                                                             $popupImage = $articleImage;
@@ -94,7 +103,6 @@
                                                                 <div class="p-item-content">
                                                                     <a
                                                                         rel="nofollow"
-                                                                        target="_blank"
                                                                         class="p-item-title"
                                                                         href="<?= $externalLink ?>"
                                                                         title="<?= $itemTitle ?>"
@@ -102,7 +110,6 @@
                                                                     >
                                                                     <a
                                                                         rel="nofollow"
-                                                                        target="_blank"
                                                                         href="<?= $externalLink ?>"
                                                                         class="p-item item-more"
                                                                         title="<?= $itemTitle ?>"
@@ -113,6 +120,7 @@
                                                                         href="<?= $popupImage ?>"
                                                                         class="p-item item-popup"
                                                                         title="<?= $itemTitle ?>"
+                                                                        data-uk-lightbox="{group:'article-catalogue'}"
                                                                         ><span class="fa fa-search"></span
                                                                     ></a>
                                                                     <?php endif; ?>
@@ -132,7 +140,7 @@
                                                     class="des-load load-xemthem"
                                                     data-label="Xem thêm..."
                                                     data-label-loaded="Đã hiển thị tất cả công trình"
-                                                ></span>
+                                                >Xem thêm...</span>
                                             </div>
                                         </div>
                                     </div>
@@ -146,3 +154,60 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        var start = $('.portfolio-content li').length;
+        var catalogueId = '<?= $detailCatalogue['id'] ?>';
+        var getParams = '<?= base64_encode(json_encode($_GET)) ?>';
+        var canonical = '<?= $detailCatalogue['canonical'] ?>';
+        var hasMore = <?= (isset($articleList) && count($articleList) >= $perpage) ? 'true' : 'false' ?>;
+
+        if (!hasMore) {
+            $('.btn-loadmore').hide();
+        }
+
+        $(document).on('click', '.load-xemthem', function() {
+            var _this = $(this);
+            var loader = $('.respl-image-loading');
+            
+            loader.show();
+            _this.text('Đang tải...');
+
+            $.ajax({
+                url: '<?= base_url('frontend/article/catalogue/load_website') ?>',
+                type: 'POST',
+                data: {
+                    start: $('.portfolio-content li').length + 1,
+                    id: catalogueId,
+                    get: getParams,
+                    canonical: canonical
+                },
+                dataType: 'json',
+                success: function(res) {
+                    loader.hide();
+                    _this.text(_this.attr('data-label'));
+
+                    if (res.html && res.html.trim() != '') {
+                        $('.portfolio-content').append(res.html);
+                        // Re-initialize lightbox if needed
+                        if (typeof UIkit !== 'undefined' && UIkit.lightbox) {
+                            UIkit.lightbox($('.item-popup'), {group:'article-catalogue'});
+                        }
+                    } else {
+                        $('.btn-loadmore').hide();
+                    }
+
+                    if (!res.viewmore) {
+                        $('.btn-loadmore').hide();
+                    }
+                },
+                error: function() {
+                    loader.hide();
+                    _this.text(_this.attr('data-label'));
+                    alert('Có lỗi xảy ra, vui lòng thử lại!');
+                }
+            });
+        });
+    });
+</script>
