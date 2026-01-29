@@ -39,35 +39,6 @@ class ConfigBie
 				'favicon' => array('type' => 'images', 'label' => 'Favicon', 'title' => 'Favicon là gì?', 'link' => 'https://webchuanseoht.com/favicon-la-gi-tac-dung-cua-favicon-nhu-the-nao.html'),
 			),
 		);
-		$data['aboutus'] =  array(
-			'label' => 'Khối về chúng tôi',
-			'description' => 'Cấu hình đầy đủ thông tin giúp khách hàng dễ dàng tiếp cận với dịch vụ của bạn',
-			'value' => array(
-				'image' => array('type' => 'images', 'label' => 'Ảnh đại diện'),
-				'title' => array('type' => 'text', 'label' => 'Tiêu đề chính'),
-				'description' => array('type' => 'textarea', 'label' => 'Nội dung'),
-				'title1' => array('type' => 'text', 'label' => 'Tiêu đề khối 1'),
-				'description1' => array('type' => 'textarea', 'label' => 'Nội dung khối 1'),
-				'title2' => array('type' => 'text', 'label' => 'Tiêu đề khối 2'),
-				'description2' => array('type' => 'textarea', 'label' => 'Nội dung khối 2'),
-			),
-		);
-		$data['services'] =  array(
-			'label' => 'Khối dịch vụ',
-			'description' => 'Cấu hình đầy đủ thông tin giúp khách hàng dễ dàng tiếp cận với dịch vụ của bạn',
-			'value' => array(
-				'image' => array('type' => 'images', 'label' => 'Ảnh đại diện'),
-				'title' => array('type' => 'text', 'label' => 'Tiêu đề chính'),
-				'title1' => array('type' => 'text', 'label' => 'Tiêu đề khối 1'),
-				'description1' => array('type' => 'textarea', 'label' => 'Nội dung khối 1'),
-				'title2' => array('type' => 'text', 'label' => 'Tiêu đề khối 2'),
-				'description2' => array('type' => 'textarea', 'label' => 'Nội dung khối 2'),
-				'title3' => array('type' => 'text', 'label' => 'Tiêu đề khối 3'),
-				'description3' => array('type' => 'textarea', 'label' => 'Nội dung khối 3'),
-				'title4' => array('type' => 'text', 'label' => 'Tiêu đề khối 4'),
-				'description4' => array('type' => 'textarea', 'label' => 'Nội dung khối 4'),
-			),
-		);
 		$data['contact'] =  array(
 			'label' => 'Thông tin liên lạc',
 			'description' => 'Cấu hình đầy đủ thông tin liên hệ giúp khách hàng dễ dàng tiếp cận với dịch vụ của bạn',

@@ -57,14 +57,14 @@ $productHot = $model->_get_where(array(
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div id="contents" role="main" class="main-page col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="post-10913 page type-page status-publish has-post-thumbnail hentry">
-                <div class="entry-content tintuc-news">
-                    <div class="entry-summary">
-                        <div data-vc-full-width="true" data-vc-full-width-init="false"
-                            class="vc_row wpb_row vc_row-fluid banner-w">
+<div class="row">
+    <div id="contents" role="main" class="main-page col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="post-10913 page type-page status-publish has-post-thumbnail hentry">
+            <div class="entry-content tintuc-news">
+                <div class="entry-summary">
+                    <div data-vc-full-width="true" data-vc-full-width-init="false"
+                        class="vc_row wpb_row vc_row-fluid banner-w">
+                        <div class="container">
                             <div
                                 class="wpb_column vc_column_container vc_col-sm-3 vc_col-lg-3 vc_col-md-3 vc_hidden-md vc_hidden-sm vc_col-xs-12 vc_hidden-xs">
                                 <div class="vc_column-inner vc_custom_1614738167343">
@@ -92,8 +92,10 @@ $productHot = $model->_get_where(array(
                                 </div>
                             </div>
                         </div>
-                        <div class="vc_row-full-width vc_clearfix"></div>
-                        <div class="vc_row wpb_row vc_row-fluid">
+                    </div>
+                    <div class="vc_row-full-width vc_clearfix"></div>
+                    <div class="vc_row wpb_row vc_row-fluid">
+                        <div class="container">
                             <div class="wpb_column vc_column_container vc_col-sm-12">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
@@ -128,19 +130,21 @@ $productHot = $model->_get_where(array(
                                 </div>
                             </div>
                         </div>
-                        <?php if (isset($panel['product-home']['data']) && is_array($panel['product-home']['data']) && count($panel['product-home']['data'])): ?>
-                            <?php foreach ($panel['product-home']['data'] as $index => $category):
-                                $sectionId = str_replace(' ', '-', strtolower($category['canonical']));
-                                $sectionClass = ($index % 2 == 0) ? 'sp1' : 'sp2';
-                                $swiperId = 'swiper-' . $category['id'];
-                                $swiperThumbsId = 'swiper-thumbs-' . $category['id'];
-                                $album = is_array($category['album']) ? $category['album'] : (is_string($category['album']) ? json_decode($category['album'], true) : []);
-                                $products = isset($category['post']) && is_array($category['post']) ? array_slice($category['post'], 0, 6) : [];
-                                ?>
-                                <section id="<?php echo $sectionId; ?>" data-vc-full-width="true"
-                                    data-vc-full-width-init="false"
-                                    class="vc_section section-sp <?php echo $sectionClass; ?> vc_section-o-content-bottom vc_section-flex">
-                                    <div class="vc_row wpb_row vc_row-fluid">
+                    </div>
+                    <?php if (isset($panel['product-home']['data']) && is_array($panel['product-home']['data']) && count($panel['product-home']['data'])): ?>
+                        <?php foreach ($panel['product-home']['data'] as $index => $category):
+                            $sectionId = str_replace(' ', '-', strtolower($category['canonical']));
+                            $sectionClass = ($index % 2 == 0) ? 'sp1' : 'sp2';
+                            $swiperId = 'swiper-' . $category['id'];
+                            $swiperThumbsId = 'swiper-thumbs-' . $category['id'];
+                            $album = is_array($category['album']) ? $category['album'] : (is_string($category['album']) ? json_decode($category['album'], true) : []);
+                            $products = isset($category['post']) && is_array($category['post']) ? array_slice($category['post'], 0, 6) : [];
+                            ?>
+                            <section id="<?php echo $sectionId; ?>" data-vc-full-width="true"
+                                data-vc-full-width-init="false"
+                                class="vc_section section-sp <?php echo $sectionClass; ?> vc_section-o-content-bottom vc_section-flex">
+                                <div class="vc_row wpb_row vc_row-fluid">
+                                    <div class="container">
                                         <div class="wpb_column vc_column_container vc_col-sm-12">
                                             <div class="vc_column-inner">
                                                 <div class="wpb_wrapper">
@@ -161,7 +165,9 @@ $productHot = $model->_get_where(array(
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="vc_row wpb_row vc_row-fluid display--row">
+                                </div>
+                                <div class="vc_row wpb_row vc_row-fluid display--row">
+                                    <div class="container">
                                         <div class="display--img wpb_column vc_column_container vc_col-sm-6">
                                             <div class="vc_column-inner vc_custom_1610007879945">
                                                 <div class="wpb_wrapper">
@@ -322,46 +328,47 @@ $productHot = $model->_get_where(array(
                                             </div>
                                         </div>
                                     </div>
-                                </section>
-                                <?php if ($index < count($panel['product-home']['data']) - 1): ?>
-                                    <div class="vc_row-full-width vc_clearfix"></div>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                        <?php if (isset($panel['cong-trinh']) && is_array($panel['cong-trinh'])):
-                            $congTrinhPanel = $panel['cong-trinh'];
-                            $congTrinhData = isset($congTrinhPanel['data']) ? $congTrinhPanel['data'] : [];
-                            $categories = [];
-                            if (!empty($congTrinhData)) {
-                                foreach ($congTrinhData as $item) {
-                                    if (!empty($item['cat_canonical'])) {
-                                        $categories[] = $item['cat_canonical'];
-                                    }
+                                </div>
+                            </section>
+                            <?php if ($index < count($panel['product-home']['data']) - 1): ?>
+                                <div class="vc_row-full-width vc_clearfix"></div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php if (isset($panel['cong-trinh']) && is_array($panel['cong-trinh'])):
+                        $congTrinhPanel = $panel['cong-trinh'];
+                        $congTrinhData = isset($congTrinhPanel['data']) ? $congTrinhPanel['data'] : [];
+                        $categories = [];
+                        if (!empty($congTrinhData)) {
+                            foreach ($congTrinhData as $item) {
+                                if (!empty($item['cat_canonical'])) {
+                                    $categories[] = $item['cat_canonical'];
                                 }
                             }
-                            $categories = array_unique($categories);
-                            $categoryString = implode(',', $categories);
-                            ?>
-                            <div id="main-congtrinh" data-vc-full-width="true" data-vc-full-width-init="false"
-                                data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+                        }
+                        $categories = array_unique($categories);
+                        $categoryString = implode(',', $categories);
+                        ?>
+                        <div id="main-congtrinh" data-vc-full-width="true" data-vc-full-width-init="false"
+                            data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+                            <div class="container">
                                 <div class="wpb_column vc_column_container vc_col-sm-12">
-                                    <div class="vc_column-inner">
-                                        <div class="wpb_wrapper">
-                                            <div class="vc_row wpb_row vc_inner vc_row-fluid width70">
-                                                <div class="wpb_column vc_column_container vc_col-sm-12">
-                                                    <div class="vc_column-inner">
-                                                        <div class="wpb_wrapper">
-                                                            <p style="text-align: center"
-                                                                class="vc_custom_heading titlehome-congtrinh">
-                                                                <?= $congTrinhPanel['title'] ?>
-                                                            </p>
-                                                            <div
-                                                                class="wpb_text_column wpb_content_element deshome-congtrinh">
-                                                                <div class="wpb_wrapper">
-                                                                    <p>
-                                                                        <?= $congTrinhPanel['description'] ?>
-                                                                    </p>
-                                                                </div>
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="vc_row wpb_row vc_inner vc_row-fluid width70">
+                                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                <div class="vc_column-inner">
+                                                    <div class="wpb_wrapper">
+                                                        <p style="text-align: center"
+                                                            class="vc_custom_heading titlehome-congtrinh">
+                                                            <?= $congTrinhPanel['title'] ?>
+                                                        </p>
+                                                        <div
+                                                            class="wpb_text_column wpb_content_element deshome-congtrinh">
+                                                            <div class="wpb_wrapper">
+                                                                <p>
+                                                                    <?= $congTrinhPanel['description'] ?>
+                                                                </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -371,25 +378,16 @@ $productHot = $model->_get_where(array(
                                     </div>
                                 </div>
                             </div>
-                            <div class="vc_row-full-width vc_clearfix"></div>
-                            <div class="vc_row wpb_row vc_row-fluid">
+                        </div>
+                        <div class="vc_row-full-width vc_clearfix"></div>
+                        <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
+                            class="vc_row wpb_row vc_row-fluid bg-congtrinh vc_row-no-padding">
+                            <div class="container">
                                 <div class="wpb_column vc_column_container vc_col-sm-12">
-                                    <div class="vc_column-inner">
-                                        <div class="wpb_wrapper">
-                                            <div class="wpb_text_column wpb_content_element">
-                                                <div class="wpb_wrapper"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
-                                class="vc_row wpb_row vc_row-fluid bg-congtrinh vc_row-no-padding">
-                                <div class="wpb_column vc_column_container vc_col-sm-12">
-                                    <div class="vc_column-inner">
-                                        <div class="wpb_wrapper">
-                                            <div class="vc_row wpb_row vc_inner vc_row-fluid width80 congtrinh-4col">
-                                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                        <div class="vc_column-inner">
+                                            <div class="wpb_wrapper">
+                                                <div class="vc_row wpb_row vc_inner vc_row-fluid width80 congtrinh-4col">
+                                                    <div class="wpb_column vc_column_container vc_col-sm-12">
                                                     <div class="vc_column-inner">
                                                         <div class="wpb_wrapper">
                                                             <div id="ya_portfolio_2" class="revo-portfolio fitRows"
@@ -462,11 +460,11 @@ $productHot = $model->_get_where(array(
                                 </div>
                             </div>
                         </div>
-                        <div class="vc_row-full-width vc_clearfix"></div>
                     </div>
+                    <div class="vc_row-full-width vc_clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
             </div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>

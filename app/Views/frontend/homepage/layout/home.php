@@ -59,7 +59,7 @@ helper('mydatafrontend');
 			<?php echo view((isset($template)) ? $template : '') ?>
 			<div class="callme">
 				<a href="tel:0913106109"
-					><div class="icallme cphone"><span class="label-callme">Hotline: 0913.106.109</span></div></a
+					><div class="icallme cphone"><span class="label-callme">Hotline: <?php echo $general['contact_hotline'] ? $general['contact_hotline'] : '' ?></span></div></a
 				>
 				<a href="<?php echo $general['social_zalo'] ? $general['social_zalo'] : '' ?>" rel="nofollow" target="_blank"
 					><div class="icallme czalo">
