@@ -339,7 +339,7 @@ if ($get_catalogue['content'] == 'silo') {
 									<span style="color:#000;" class="uk-flex uk-flex-middle">
 										<?php echo form_radio('template', set_value('template', 'frontend/article/article/chuongtrinh'), ((isset($_POST['template']) && $_POST['template'] == 'frontend/article/article/chuongtrinh' || (isset($article['template']) && $article['template'] == 'frontend/article/article/chuongtrinh')) ? true : false), 'class=""   id="learn" style="margin-top:0;margin-right:10px;" '); ?>
 
-										<label for="learn" style="margin:0;cursor:pointer;">Giao diện Giới thiệu</label>
+										<label for="learn" style="margin:0;cursor:pointer;">Giao diện Bảng giá</label>
 									</span>
 								</div>
 							</div>
