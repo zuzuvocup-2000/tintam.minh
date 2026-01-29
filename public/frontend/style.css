@@ -1122,11 +1122,11 @@ swiper {
 
 .cart-order-button a {
     display: inline-block;
-    width: 150px;
+    width: auto;
     text-align: center;
     height: 50px;
-    line-height: 50px;
-    background: #2a9700;
+    line-height: 25px;
+    background: #2a9700 !important;
     color: white;
     border: 1px solid transparent;
 }
